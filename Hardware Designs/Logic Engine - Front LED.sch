@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.5.0">
+<eagle version="6.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -840,25 +840,18 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <part name="L8" library="rseries" deviceset="WS2812B" device=""/>
 <part name="V1" library="supply0" deviceset="+5V" device=""/>
 <part name="GND1" library="supply0" deviceset="GND" device=""/>
-<part name="GND2" library="supply0" deviceset="GND" device=""/>
 <part name="V2" library="supply0" deviceset="+5V" device=""/>
 <part name="GND4" library="supply0" deviceset="GND" device=""/>
-<part name="GND5" library="supply0" deviceset="GND" device=""/>
 <part name="V3" library="supply0" deviceset="+5V" device=""/>
 <part name="GND6" library="supply0" deviceset="GND" device=""/>
-<part name="GND7" library="supply0" deviceset="GND" device=""/>
 <part name="V4" library="supply0" deviceset="+5V" device=""/>
 <part name="GND8" library="supply0" deviceset="GND" device=""/>
-<part name="GND9" library="supply0" deviceset="GND" device=""/>
 <part name="V5" library="supply0" deviceset="+5V" device=""/>
 <part name="GND10" library="supply0" deviceset="GND" device=""/>
-<part name="GND11" library="supply0" deviceset="GND" device=""/>
 <part name="V6" library="supply0" deviceset="+5V" device=""/>
 <part name="GND12" library="supply0" deviceset="GND" device=""/>
-<part name="GND13" library="supply0" deviceset="GND" device=""/>
 <part name="V7" library="supply0" deviceset="+5V" device=""/>
 <part name="GND14" library="supply0" deviceset="GND" device=""/>
-<part name="GND15" library="supply0" deviceset="GND" device=""/>
 <part name="V8" library="supply0" deviceset="+5V" device=""/>
 <part name="GND16" library="supply0" deviceset="GND" device=""/>
 <part name="GND17" library="supply0" deviceset="GND" device=""/>
@@ -872,25 +865,18 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <part name="L16" library="rseries" deviceset="WS2812B" device=""/>
 <part name="V10" library="supply0" deviceset="+5V" device=""/>
 <part name="GND18" library="supply0" deviceset="GND" device=""/>
-<part name="GND19" library="supply0" deviceset="GND" device=""/>
 <part name="V11" library="supply0" deviceset="+5V" device=""/>
 <part name="GND20" library="supply0" deviceset="GND" device=""/>
-<part name="GND21" library="supply0" deviceset="GND" device=""/>
 <part name="V12" library="supply0" deviceset="+5V" device=""/>
 <part name="GND22" library="supply0" deviceset="GND" device=""/>
-<part name="GND23" library="supply0" deviceset="GND" device=""/>
 <part name="V13" library="supply0" deviceset="+5V" device=""/>
 <part name="GND24" library="supply0" deviceset="GND" device=""/>
-<part name="GND25" library="supply0" deviceset="GND" device=""/>
 <part name="V14" library="supply0" deviceset="+5V" device=""/>
 <part name="GND26" library="supply0" deviceset="GND" device=""/>
-<part name="GND27" library="supply0" deviceset="GND" device=""/>
 <part name="V15" library="supply0" deviceset="+5V" device=""/>
 <part name="GND28" library="supply0" deviceset="GND" device=""/>
-<part name="GND29" library="supply0" deviceset="GND" device=""/>
 <part name="V16" library="supply0" deviceset="+5V" device=""/>
 <part name="GND30" library="supply0" deviceset="GND" device=""/>
-<part name="GND31" library="supply0" deviceset="GND" device=""/>
 <part name="V17" library="supply0" deviceset="+5V" device=""/>
 <part name="GND32" library="supply0" deviceset="GND" device=""/>
 <part name="GND33" library="supply0" deviceset="GND" device=""/>
@@ -907,22 +893,16 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <part name="GND35" library="supply0" deviceset="GND" device=""/>
 <part name="V19" library="supply0" deviceset="+5V" device=""/>
 <part name="GND36" library="supply0" deviceset="GND" device=""/>
-<part name="GND37" library="supply0" deviceset="GND" device=""/>
 <part name="V20" library="supply0" deviceset="+5V" device=""/>
 <part name="GND38" library="supply0" deviceset="GND" device=""/>
-<part name="GND39" library="supply0" deviceset="GND" device=""/>
 <part name="V21" library="supply0" deviceset="+5V" device=""/>
 <part name="GND40" library="supply0" deviceset="GND" device=""/>
-<part name="GND41" library="supply0" deviceset="GND" device=""/>
 <part name="V22" library="supply0" deviceset="+5V" device=""/>
 <part name="GND42" library="supply0" deviceset="GND" device=""/>
-<part name="GND43" library="supply0" deviceset="GND" device=""/>
 <part name="V23" library="supply0" deviceset="+5V" device=""/>
 <part name="GND44" library="supply0" deviceset="GND" device=""/>
-<part name="GND45" library="supply0" deviceset="GND" device=""/>
 <part name="V24" library="supply0" deviceset="+5V" device=""/>
 <part name="GND46" library="supply0" deviceset="GND" device=""/>
-<part name="GND47" library="supply0" deviceset="GND" device=""/>
 <part name="V25" library="supply0" deviceset="+5V" device=""/>
 <part name="GND48" library="supply0" deviceset="GND" device=""/>
 <part name="GND49" library="supply0" deviceset="GND" device=""/>
@@ -975,28 +955,8 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <part name="C7" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
 <part name="C8" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
 <part name="C9" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
-<part name="C10" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
-<part name="C11" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
-<part name="C12" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
-<part name="C13" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
-<part name="C14" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
-<part name="C15" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
-<part name="C16" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
-<part name="C17" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
-<part name="C18" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
-<part name="C19" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
-<part name="C20" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
-<part name="C21" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
-<part name="C22" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
-<part name="C23" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
 <part name="C24" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
 <part name="C25" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
-<part name="C26" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
-<part name="C27" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
-<part name="C28" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
-<part name="C29" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
-<part name="C30" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
-<part name="C31" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
 <part name="C32" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
 <part name="C33" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
 <part name="C34" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
@@ -1006,50 +966,22 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <part name="C38" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
 <part name="C39" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
 <part name="C40" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
-<part name="V34" library="supply0" deviceset="+5V" device=""/>
-<part name="GND66" library="supply0" deviceset="GND" device=""/>
-<part name="GND67" library="supply0" deviceset="GND" device=""/>
-<part name="V35" library="supply0" deviceset="+5V" device=""/>
-<part name="GND68" library="supply0" deviceset="GND" device=""/>
-<part name="GND69" library="supply0" deviceset="GND" device=""/>
-<part name="V36" library="supply0" deviceset="+5V" device=""/>
-<part name="GND70" library="supply0" deviceset="GND" device=""/>
-<part name="GND71" library="supply0" deviceset="GND" device=""/>
-<part name="V37" library="supply0" deviceset="+5V" device=""/>
-<part name="GND72" library="supply0" deviceset="GND" device=""/>
-<part name="GND73" library="supply0" deviceset="GND" device=""/>
-<part name="V38" library="supply0" deviceset="+5V" device=""/>
-<part name="GND74" library="supply0" deviceset="GND" device=""/>
-<part name="GND75" library="supply0" deviceset="GND" device=""/>
-<part name="V39" library="supply0" deviceset="+5V" device=""/>
-<part name="GND76" library="supply0" deviceset="GND" device=""/>
-<part name="GND77" library="supply0" deviceset="GND" device=""/>
-<part name="V40" library="supply0" deviceset="+5V" device=""/>
-<part name="GND78" library="supply0" deviceset="GND" device=""/>
-<part name="GND79" library="supply0" deviceset="GND" device=""/>
-<part name="V41" library="supply0" deviceset="+5V" device=""/>
-<part name="GND80" library="supply0" deviceset="GND" device=""/>
-<part name="GND81" library="supply0" deviceset="GND" device=""/>
-<part name="L41" library="rseries" deviceset="WS2812B" device=""/>
-<part name="L42" library="rseries" deviceset="WS2812B" device=""/>
-<part name="L43" library="rseries" deviceset="WS2812B" device=""/>
-<part name="L44" library="rseries" deviceset="WS2812B" device=""/>
-<part name="L45" library="rseries" deviceset="WS2812B" device=""/>
-<part name="L46" library="rseries" deviceset="WS2812B" device=""/>
-<part name="L47" library="rseries" deviceset="WS2812B" device=""/>
-<part name="L48" library="rseries" deviceset="WS2812B" device=""/>
-<part name="C41" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
-<part name="C42" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
-<part name="C43" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
-<part name="C44" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
-<part name="C45" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
-<part name="C46" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
-<part name="C47" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
-<part name="C48" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
+<part name="GND2" library="supply0" deviceset="GND" device=""/>
+<part name="C10" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
+<part name="GND5" library="supply0" deviceset="GND" device=""/>
+<part name="C11" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
+<part name="GND7" library="supply0" deviceset="GND" device=""/>
+<part name="C12" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
+<part name="GND9" library="supply0" deviceset="GND" device=""/>
+<part name="C13" library="SparkFun-Capacitors" deviceset="CAP" device="0603-CAP" value="0.1uF"/>
 </parts>
 <sheets>
 <sheet>
 <plain>
+<text x="-63.5" y="363.22" size="25.4" layer="91">Please pardon the mess!</text>
+<text x="134.62" y="335.28" size="8.89" layer="91" align="center">LEDs are not positioned like this on the board; they're in a serpentine configuration.
+Also, capacitors shown aren't necessarily position right next to the LED shown.
+My bad!</text>
 </plain>
 <instances>
 <instance part="IN" gate="A" x="317.5" y="27.94"/>
@@ -1095,25 +1027,18 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <instance part="L8" gate="G$1" x="251.46" y="274.32"/>
 <instance part="V1" gate="1" x="20.32" y="251.46"/>
 <instance part="GND1" gate="1" x="20.32" y="215.9"/>
-<instance part="GND2" gate="1" x="33.02" y="241.3"/>
 <instance part="V2" gate="1" x="53.34" y="251.46"/>
 <instance part="GND4" gate="1" x="53.34" y="215.9"/>
-<instance part="GND5" gate="1" x="66.04" y="241.3"/>
 <instance part="V3" gate="1" x="86.36" y="251.46"/>
 <instance part="GND6" gate="1" x="86.36" y="215.9"/>
-<instance part="GND7" gate="1" x="99.06" y="241.3"/>
 <instance part="V4" gate="1" x="119.38" y="251.46"/>
 <instance part="GND8" gate="1" x="119.38" y="215.9"/>
-<instance part="GND9" gate="1" x="132.08" y="241.3"/>
 <instance part="V5" gate="1" x="152.4" y="251.46"/>
 <instance part="GND10" gate="1" x="152.4" y="215.9"/>
-<instance part="GND11" gate="1" x="165.1" y="241.3"/>
 <instance part="V6" gate="1" x="185.42" y="251.46"/>
 <instance part="GND12" gate="1" x="185.42" y="215.9"/>
-<instance part="GND13" gate="1" x="198.12" y="241.3"/>
 <instance part="V7" gate="1" x="218.44" y="251.46"/>
 <instance part="GND14" gate="1" x="218.44" y="215.9"/>
-<instance part="GND15" gate="1" x="231.14" y="241.3"/>
 <instance part="V8" gate="1" x="251.46" y="251.46"/>
 <instance part="GND16" gate="1" x="251.46" y="215.9"/>
 <instance part="GND17" gate="1" x="264.16" y="241.3"/>
@@ -1127,25 +1052,18 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <instance part="L16" gate="G$1" x="251.46" y="228.6"/>
 <instance part="V10" gate="1" x="20.32" y="205.74"/>
 <instance part="GND18" gate="1" x="20.32" y="170.18"/>
-<instance part="GND19" gate="1" x="33.02" y="195.58"/>
 <instance part="V11" gate="1" x="53.34" y="205.74"/>
 <instance part="GND20" gate="1" x="53.34" y="170.18"/>
-<instance part="GND21" gate="1" x="66.04" y="195.58"/>
 <instance part="V12" gate="1" x="86.36" y="205.74"/>
 <instance part="GND22" gate="1" x="86.36" y="170.18"/>
-<instance part="GND23" gate="1" x="99.06" y="195.58"/>
 <instance part="V13" gate="1" x="119.38" y="205.74"/>
 <instance part="GND24" gate="1" x="119.38" y="170.18"/>
-<instance part="GND25" gate="1" x="132.08" y="195.58"/>
 <instance part="V14" gate="1" x="152.4" y="205.74"/>
 <instance part="GND26" gate="1" x="152.4" y="170.18"/>
-<instance part="GND27" gate="1" x="165.1" y="195.58"/>
 <instance part="V15" gate="1" x="185.42" y="205.74"/>
 <instance part="GND28" gate="1" x="185.42" y="170.18"/>
-<instance part="GND29" gate="1" x="198.12" y="195.58"/>
 <instance part="V16" gate="1" x="218.44" y="205.74"/>
 <instance part="GND30" gate="1" x="218.44" y="170.18"/>
-<instance part="GND31" gate="1" x="231.14" y="195.58"/>
 <instance part="V17" gate="1" x="251.46" y="205.74"/>
 <instance part="GND32" gate="1" x="251.46" y="170.18"/>
 <instance part="GND33" gate="1" x="264.16" y="195.58"/>
@@ -1162,22 +1080,16 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <instance part="GND35" gate="1" x="33.02" y="149.86"/>
 <instance part="V19" gate="1" x="53.34" y="160.02"/>
 <instance part="GND36" gate="1" x="53.34" y="124.46"/>
-<instance part="GND37" gate="1" x="66.04" y="149.86"/>
 <instance part="V20" gate="1" x="86.36" y="160.02"/>
 <instance part="GND38" gate="1" x="86.36" y="124.46"/>
-<instance part="GND39" gate="1" x="99.06" y="149.86"/>
 <instance part="V21" gate="1" x="119.38" y="160.02"/>
 <instance part="GND40" gate="1" x="119.38" y="124.46"/>
-<instance part="GND41" gate="1" x="132.08" y="149.86"/>
 <instance part="V22" gate="1" x="152.4" y="160.02"/>
 <instance part="GND42" gate="1" x="152.4" y="124.46"/>
-<instance part="GND43" gate="1" x="165.1" y="149.86"/>
 <instance part="V23" gate="1" x="185.42" y="160.02"/>
 <instance part="GND44" gate="1" x="185.42" y="124.46"/>
-<instance part="GND45" gate="1" x="198.12" y="149.86"/>
 <instance part="V24" gate="1" x="218.44" y="160.02"/>
 <instance part="GND46" gate="1" x="218.44" y="124.46"/>
-<instance part="GND47" gate="1" x="231.14" y="149.86"/>
 <instance part="V25" gate="1" x="251.46" y="160.02"/>
 <instance part="GND48" gate="1" x="251.46" y="124.46"/>
 <instance part="GND49" gate="1" x="264.16" y="149.86"/>
@@ -1230,28 +1142,8 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <instance part="C7" gate="G$1" x="226.06" y="292.1" rot="R90"/>
 <instance part="C8" gate="G$1" x="259.08" y="292.1" rot="R90"/>
 <instance part="C9" gate="G$1" x="259.08" y="246.38" rot="R90"/>
-<instance part="C10" gate="G$1" x="226.06" y="246.38" rot="R90"/>
-<instance part="C11" gate="G$1" x="193.04" y="246.38" rot="R90"/>
-<instance part="C12" gate="G$1" x="160.02" y="246.38" rot="R90"/>
-<instance part="C13" gate="G$1" x="127" y="246.38" rot="R90"/>
-<instance part="C14" gate="G$1" x="93.98" y="246.38" rot="R90"/>
-<instance part="C15" gate="G$1" x="60.96" y="246.38" rot="R90"/>
-<instance part="C16" gate="G$1" x="27.94" y="246.38" rot="R90"/>
-<instance part="C17" gate="G$1" x="27.94" y="200.66" rot="R90"/>
-<instance part="C18" gate="G$1" x="60.96" y="200.66" rot="R90"/>
-<instance part="C19" gate="G$1" x="93.98" y="200.66" rot="R90"/>
-<instance part="C20" gate="G$1" x="127" y="200.66" rot="R90"/>
-<instance part="C21" gate="G$1" x="160.02" y="200.66" rot="R90"/>
-<instance part="C22" gate="G$1" x="193.04" y="200.66" rot="R90"/>
-<instance part="C23" gate="G$1" x="226.06" y="200.66" rot="R90"/>
 <instance part="C24" gate="G$1" x="259.08" y="200.66" rot="R90"/>
 <instance part="C25" gate="G$1" x="259.08" y="154.94" rot="R90"/>
-<instance part="C26" gate="G$1" x="226.06" y="154.94" rot="R90"/>
-<instance part="C27" gate="G$1" x="193.04" y="154.94" rot="R90"/>
-<instance part="C28" gate="G$1" x="160.02" y="154.94" rot="R90"/>
-<instance part="C29" gate="G$1" x="127" y="154.94" rot="R90"/>
-<instance part="C30" gate="G$1" x="93.98" y="154.94" rot="R90"/>
-<instance part="C31" gate="G$1" x="60.96" y="154.94" rot="R90"/>
 <instance part="C32" gate="G$1" x="27.94" y="154.94" rot="R90"/>
 <instance part="C33" gate="G$1" x="27.94" y="109.22" rot="R90"/>
 <instance part="C34" gate="G$1" x="60.96" y="109.22" rot="R90"/>
@@ -1261,46 +1153,14 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <instance part="C38" gate="G$1" x="193.04" y="109.22" rot="R90"/>
 <instance part="C39" gate="G$1" x="226.06" y="109.22" rot="R90"/>
 <instance part="C40" gate="G$1" x="259.08" y="109.22" rot="R90"/>
-<instance part="V34" gate="1" x="20.32" y="68.58"/>
-<instance part="GND66" gate="1" x="20.32" y="33.02"/>
-<instance part="GND67" gate="1" x="33.02" y="58.42"/>
-<instance part="V35" gate="1" x="53.34" y="68.58"/>
-<instance part="GND68" gate="1" x="53.34" y="33.02"/>
-<instance part="GND69" gate="1" x="66.04" y="58.42"/>
-<instance part="V36" gate="1" x="86.36" y="68.58"/>
-<instance part="GND70" gate="1" x="86.36" y="33.02"/>
-<instance part="GND71" gate="1" x="99.06" y="58.42"/>
-<instance part="V37" gate="1" x="119.38" y="68.58"/>
-<instance part="GND72" gate="1" x="119.38" y="33.02"/>
-<instance part="GND73" gate="1" x="132.08" y="58.42"/>
-<instance part="V38" gate="1" x="152.4" y="68.58"/>
-<instance part="GND74" gate="1" x="152.4" y="33.02"/>
-<instance part="GND75" gate="1" x="165.1" y="58.42"/>
-<instance part="V39" gate="1" x="185.42" y="68.58"/>
-<instance part="GND76" gate="1" x="185.42" y="33.02"/>
-<instance part="GND77" gate="1" x="198.12" y="58.42"/>
-<instance part="V40" gate="1" x="218.44" y="68.58"/>
-<instance part="GND78" gate="1" x="218.44" y="33.02"/>
-<instance part="GND79" gate="1" x="231.14" y="58.42"/>
-<instance part="V41" gate="1" x="251.46" y="68.58"/>
-<instance part="GND80" gate="1" x="251.46" y="33.02"/>
-<instance part="GND81" gate="1" x="264.16" y="58.42"/>
-<instance part="L41" gate="G$1" x="20.32" y="45.72"/>
-<instance part="L42" gate="G$1" x="53.34" y="45.72"/>
-<instance part="L43" gate="G$1" x="86.36" y="45.72"/>
-<instance part="L44" gate="G$1" x="119.38" y="45.72"/>
-<instance part="L45" gate="G$1" x="152.4" y="45.72"/>
-<instance part="L46" gate="G$1" x="185.42" y="45.72"/>
-<instance part="L47" gate="G$1" x="218.44" y="45.72"/>
-<instance part="L48" gate="G$1" x="251.46" y="45.72"/>
-<instance part="C41" gate="G$1" x="27.94" y="63.5" rot="R90"/>
-<instance part="C42" gate="G$1" x="60.96" y="63.5" rot="R90"/>
-<instance part="C43" gate="G$1" x="93.98" y="63.5" rot="R90"/>
-<instance part="C44" gate="G$1" x="127" y="63.5" rot="R90"/>
-<instance part="C45" gate="G$1" x="160.02" y="63.5" rot="R90"/>
-<instance part="C46" gate="G$1" x="193.04" y="63.5" rot="R90"/>
-<instance part="C47" gate="G$1" x="226.06" y="63.5" rot="R90"/>
-<instance part="C48" gate="G$1" x="259.08" y="63.5" rot="R90"/>
+<instance part="GND2" gate="1" x="33.02" y="195.58"/>
+<instance part="C10" gate="G$1" x="27.94" y="200.66" rot="R90"/>
+<instance part="GND5" gate="1" x="33.02" y="241.3"/>
+<instance part="C11" gate="G$1" x="27.94" y="246.38" rot="R90"/>
+<instance part="GND7" gate="1" x="231.14" y="149.86"/>
+<instance part="C12" gate="G$1" x="226.06" y="154.94" rot="R90"/>
+<instance part="GND9" gate="1" x="66.04" y="149.86"/>
+<instance part="C13" gate="G$1" x="60.96" y="154.94" rot="R90"/>
 </instances>
 <busses>
 </busses>
@@ -1399,48 +1259,6 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <pinref part="L8" gate="G$1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="GND2" gate="1" pin="GND"/>
-<wire x1="30.48" y1="246.38" x2="33.02" y2="246.38" width="0.1524" layer="91"/>
-<wire x1="33.02" y1="246.38" x2="33.02" y2="243.84" width="0.1524" layer="91"/>
-<pinref part="C16" gate="G$1" pin="2"/>
-</segment>
-<segment>
-<pinref part="GND5" gate="1" pin="GND"/>
-<wire x1="63.5" y1="246.38" x2="66.04" y2="246.38" width="0.1524" layer="91"/>
-<wire x1="66.04" y1="246.38" x2="66.04" y2="243.84" width="0.1524" layer="91"/>
-<pinref part="C15" gate="G$1" pin="2"/>
-</segment>
-<segment>
-<pinref part="GND7" gate="1" pin="GND"/>
-<wire x1="96.52" y1="246.38" x2="99.06" y2="246.38" width="0.1524" layer="91"/>
-<wire x1="99.06" y1="246.38" x2="99.06" y2="243.84" width="0.1524" layer="91"/>
-<pinref part="C14" gate="G$1" pin="2"/>
-</segment>
-<segment>
-<pinref part="GND9" gate="1" pin="GND"/>
-<wire x1="129.54" y1="246.38" x2="132.08" y2="246.38" width="0.1524" layer="91"/>
-<wire x1="132.08" y1="246.38" x2="132.08" y2="243.84" width="0.1524" layer="91"/>
-<pinref part="C13" gate="G$1" pin="2"/>
-</segment>
-<segment>
-<pinref part="GND11" gate="1" pin="GND"/>
-<wire x1="162.56" y1="246.38" x2="165.1" y2="246.38" width="0.1524" layer="91"/>
-<wire x1="165.1" y1="246.38" x2="165.1" y2="243.84" width="0.1524" layer="91"/>
-<pinref part="C12" gate="G$1" pin="2"/>
-</segment>
-<segment>
-<pinref part="GND13" gate="1" pin="GND"/>
-<wire x1="195.58" y1="246.38" x2="198.12" y2="246.38" width="0.1524" layer="91"/>
-<wire x1="198.12" y1="246.38" x2="198.12" y2="243.84" width="0.1524" layer="91"/>
-<pinref part="C11" gate="G$1" pin="2"/>
-</segment>
-<segment>
-<pinref part="GND15" gate="1" pin="GND"/>
-<wire x1="228.6" y1="246.38" x2="231.14" y2="246.38" width="0.1524" layer="91"/>
-<wire x1="231.14" y1="246.38" x2="231.14" y2="243.84" width="0.1524" layer="91"/>
-<pinref part="C10" gate="G$1" pin="2"/>
-</segment>
-<segment>
 <pinref part="GND17" gate="1" pin="GND"/>
 <wire x1="261.62" y1="246.38" x2="264.16" y2="246.38" width="0.1524" layer="91"/>
 <wire x1="264.16" y1="246.38" x2="264.16" y2="243.84" width="0.1524" layer="91"/>
@@ -1477,48 +1295,6 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <segment>
 <pinref part="GND16" gate="1" pin="GND"/>
 <pinref part="L16" gate="G$1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="GND19" gate="1" pin="GND"/>
-<wire x1="30.48" y1="200.66" x2="33.02" y2="200.66" width="0.1524" layer="91"/>
-<wire x1="33.02" y1="200.66" x2="33.02" y2="198.12" width="0.1524" layer="91"/>
-<pinref part="C17" gate="G$1" pin="2"/>
-</segment>
-<segment>
-<pinref part="GND21" gate="1" pin="GND"/>
-<wire x1="63.5" y1="200.66" x2="66.04" y2="200.66" width="0.1524" layer="91"/>
-<wire x1="66.04" y1="200.66" x2="66.04" y2="198.12" width="0.1524" layer="91"/>
-<pinref part="C18" gate="G$1" pin="2"/>
-</segment>
-<segment>
-<pinref part="GND23" gate="1" pin="GND"/>
-<wire x1="96.52" y1="200.66" x2="99.06" y2="200.66" width="0.1524" layer="91"/>
-<wire x1="99.06" y1="200.66" x2="99.06" y2="198.12" width="0.1524" layer="91"/>
-<pinref part="C19" gate="G$1" pin="2"/>
-</segment>
-<segment>
-<pinref part="GND25" gate="1" pin="GND"/>
-<wire x1="129.54" y1="200.66" x2="132.08" y2="200.66" width="0.1524" layer="91"/>
-<wire x1="132.08" y1="200.66" x2="132.08" y2="198.12" width="0.1524" layer="91"/>
-<pinref part="C20" gate="G$1" pin="2"/>
-</segment>
-<segment>
-<pinref part="GND27" gate="1" pin="GND"/>
-<wire x1="162.56" y1="200.66" x2="165.1" y2="200.66" width="0.1524" layer="91"/>
-<wire x1="165.1" y1="200.66" x2="165.1" y2="198.12" width="0.1524" layer="91"/>
-<pinref part="C21" gate="G$1" pin="2"/>
-</segment>
-<segment>
-<pinref part="GND29" gate="1" pin="GND"/>
-<wire x1="195.58" y1="200.66" x2="198.12" y2="200.66" width="0.1524" layer="91"/>
-<wire x1="198.12" y1="200.66" x2="198.12" y2="198.12" width="0.1524" layer="91"/>
-<pinref part="C22" gate="G$1" pin="2"/>
-</segment>
-<segment>
-<pinref part="GND31" gate="1" pin="GND"/>
-<wire x1="228.6" y1="200.66" x2="231.14" y2="200.66" width="0.1524" layer="91"/>
-<wire x1="231.14" y1="200.66" x2="231.14" y2="198.12" width="0.1524" layer="91"/>
-<pinref part="C23" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <pinref part="GND33" gate="1" pin="GND"/>
@@ -1563,42 +1339,6 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <wire x1="30.48" y1="154.94" x2="33.02" y2="154.94" width="0.1524" layer="91"/>
 <wire x1="33.02" y1="154.94" x2="33.02" y2="152.4" width="0.1524" layer="91"/>
 <pinref part="C32" gate="G$1" pin="2"/>
-</segment>
-<segment>
-<pinref part="GND37" gate="1" pin="GND"/>
-<wire x1="63.5" y1="154.94" x2="66.04" y2="154.94" width="0.1524" layer="91"/>
-<wire x1="66.04" y1="154.94" x2="66.04" y2="152.4" width="0.1524" layer="91"/>
-<pinref part="C31" gate="G$1" pin="2"/>
-</segment>
-<segment>
-<pinref part="GND39" gate="1" pin="GND"/>
-<wire x1="96.52" y1="154.94" x2="99.06" y2="154.94" width="0.1524" layer="91"/>
-<wire x1="99.06" y1="154.94" x2="99.06" y2="152.4" width="0.1524" layer="91"/>
-<pinref part="C30" gate="G$1" pin="2"/>
-</segment>
-<segment>
-<pinref part="GND41" gate="1" pin="GND"/>
-<wire x1="129.54" y1="154.94" x2="132.08" y2="154.94" width="0.1524" layer="91"/>
-<wire x1="132.08" y1="154.94" x2="132.08" y2="152.4" width="0.1524" layer="91"/>
-<pinref part="C29" gate="G$1" pin="2"/>
-</segment>
-<segment>
-<pinref part="GND43" gate="1" pin="GND"/>
-<wire x1="162.56" y1="154.94" x2="165.1" y2="154.94" width="0.1524" layer="91"/>
-<wire x1="165.1" y1="154.94" x2="165.1" y2="152.4" width="0.1524" layer="91"/>
-<pinref part="C28" gate="G$1" pin="2"/>
-</segment>
-<segment>
-<pinref part="GND45" gate="1" pin="GND"/>
-<wire x1="195.58" y1="154.94" x2="198.12" y2="154.94" width="0.1524" layer="91"/>
-<wire x1="198.12" y1="154.94" x2="198.12" y2="152.4" width="0.1524" layer="91"/>
-<pinref part="C27" gate="G$1" pin="2"/>
-</segment>
-<segment>
-<pinref part="GND47" gate="1" pin="GND"/>
-<wire x1="228.6" y1="154.94" x2="231.14" y2="154.94" width="0.1524" layer="91"/>
-<wire x1="231.14" y1="154.94" x2="231.14" y2="152.4" width="0.1524" layer="91"/>
-<pinref part="C26" gate="G$1" pin="2"/>
 </segment>
 <segment>
 <pinref part="GND49" gate="1" pin="GND"/>
@@ -1719,84 +1459,28 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <pinref part="L40" gate="G$1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="GND67" gate="1" pin="GND"/>
-<wire x1="30.48" y1="63.5" x2="33.02" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="33.02" y1="63.5" x2="33.02" y2="60.96" width="0.1524" layer="91"/>
-<pinref part="C41" gate="G$1" pin="2"/>
+<pinref part="GND2" gate="1" pin="GND"/>
+<wire x1="30.48" y1="200.66" x2="33.02" y2="200.66" width="0.1524" layer="91"/>
+<wire x1="33.02" y1="200.66" x2="33.02" y2="198.12" width="0.1524" layer="91"/>
+<pinref part="C10" gate="G$1" pin="2"/>
 </segment>
 <segment>
-<pinref part="GND69" gate="1" pin="GND"/>
-<wire x1="63.5" y1="63.5" x2="66.04" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="66.04" y1="63.5" x2="66.04" y2="60.96" width="0.1524" layer="91"/>
-<pinref part="C42" gate="G$1" pin="2"/>
+<pinref part="GND5" gate="1" pin="GND"/>
+<wire x1="30.48" y1="246.38" x2="33.02" y2="246.38" width="0.1524" layer="91"/>
+<wire x1="33.02" y1="246.38" x2="33.02" y2="243.84" width="0.1524" layer="91"/>
+<pinref part="C11" gate="G$1" pin="2"/>
 </segment>
 <segment>
-<pinref part="GND71" gate="1" pin="GND"/>
-<wire x1="96.52" y1="63.5" x2="99.06" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="99.06" y1="63.5" x2="99.06" y2="60.96" width="0.1524" layer="91"/>
-<pinref part="C43" gate="G$1" pin="2"/>
+<pinref part="GND7" gate="1" pin="GND"/>
+<wire x1="228.6" y1="154.94" x2="231.14" y2="154.94" width="0.1524" layer="91"/>
+<wire x1="231.14" y1="154.94" x2="231.14" y2="152.4" width="0.1524" layer="91"/>
+<pinref part="C12" gate="G$1" pin="2"/>
 </segment>
 <segment>
-<pinref part="GND73" gate="1" pin="GND"/>
-<wire x1="129.54" y1="63.5" x2="132.08" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="132.08" y1="63.5" x2="132.08" y2="60.96" width="0.1524" layer="91"/>
-<pinref part="C44" gate="G$1" pin="2"/>
-</segment>
-<segment>
-<pinref part="GND75" gate="1" pin="GND"/>
-<wire x1="162.56" y1="63.5" x2="165.1" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="165.1" y1="63.5" x2="165.1" y2="60.96" width="0.1524" layer="91"/>
-<pinref part="C45" gate="G$1" pin="2"/>
-</segment>
-<segment>
-<pinref part="GND77" gate="1" pin="GND"/>
-<wire x1="195.58" y1="63.5" x2="198.12" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="198.12" y1="63.5" x2="198.12" y2="60.96" width="0.1524" layer="91"/>
-<pinref part="C46" gate="G$1" pin="2"/>
-</segment>
-<segment>
-<pinref part="GND79" gate="1" pin="GND"/>
-<wire x1="228.6" y1="63.5" x2="231.14" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="231.14" y1="63.5" x2="231.14" y2="60.96" width="0.1524" layer="91"/>
-<pinref part="C47" gate="G$1" pin="2"/>
-</segment>
-<segment>
-<pinref part="GND81" gate="1" pin="GND"/>
-<wire x1="261.62" y1="63.5" x2="264.16" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="264.16" y1="63.5" x2="264.16" y2="60.96" width="0.1524" layer="91"/>
-<pinref part="C48" gate="G$1" pin="2"/>
-</segment>
-<segment>
-<pinref part="GND66" gate="1" pin="GND"/>
-<pinref part="L41" gate="G$1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="GND68" gate="1" pin="GND"/>
-<pinref part="L42" gate="G$1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="GND70" gate="1" pin="GND"/>
-<pinref part="L43" gate="G$1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="GND72" gate="1" pin="GND"/>
-<pinref part="L44" gate="G$1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="GND74" gate="1" pin="GND"/>
-<pinref part="L45" gate="G$1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="GND76" gate="1" pin="GND"/>
-<pinref part="L46" gate="G$1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="GND78" gate="1" pin="GND"/>
-<pinref part="L47" gate="G$1" pin="GND"/>
-</segment>
-<segment>
-<pinref part="GND80" gate="1" pin="GND"/>
-<pinref part="L48" gate="G$1" pin="GND"/>
+<pinref part="GND9" gate="1" pin="GND"/>
+<wire x1="63.5" y1="154.94" x2="66.04" y2="154.94" width="0.1524" layer="91"/>
+<wire x1="66.04" y1="154.94" x2="66.04" y2="152.4" width="0.1524" layer="91"/>
+<pinref part="C13" gate="G$1" pin="2"/>
 </segment>
 </net>
 <net name="+5V" class="1">
@@ -1885,65 +1569,41 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <segment>
 <pinref part="V1" gate="1" pin="+5V"/>
 <wire x1="20.32" y1="248.92" x2="20.32" y2="246.38" width="0.1524" layer="91"/>
+<pinref part="L9" gate="G$1" pin="VDD"/>
+<pinref part="C11" gate="G$1" pin="1"/>
 <wire x1="20.32" y1="246.38" x2="20.32" y2="243.586" width="0.1524" layer="91"/>
 <wire x1="22.86" y1="246.38" x2="20.32" y2="246.38" width="0.1524" layer="91"/>
 <junction x="20.32" y="246.38"/>
-<pinref part="L9" gate="G$1" pin="VDD"/>
-<pinref part="C16" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="V2" gate="1" pin="+5V"/>
-<wire x1="53.34" y1="248.92" x2="53.34" y2="246.38" width="0.1524" layer="91"/>
-<wire x1="53.34" y1="246.38" x2="53.34" y2="243.586" width="0.1524" layer="91"/>
-<wire x1="55.88" y1="246.38" x2="53.34" y2="246.38" width="0.1524" layer="91"/>
-<junction x="53.34" y="246.38"/>
+<wire x1="53.34" y1="248.92" x2="53.34" y2="243.586" width="0.1524" layer="91"/>
 <pinref part="L10" gate="G$1" pin="VDD"/>
-<pinref part="C15" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="V3" gate="1" pin="+5V"/>
-<wire x1="86.36" y1="248.92" x2="86.36" y2="246.38" width="0.1524" layer="91"/>
-<wire x1="86.36" y1="246.38" x2="86.36" y2="243.586" width="0.1524" layer="91"/>
-<wire x1="88.9" y1="246.38" x2="86.36" y2="246.38" width="0.1524" layer="91"/>
-<junction x="86.36" y="246.38"/>
+<wire x1="86.36" y1="248.92" x2="86.36" y2="243.586" width="0.1524" layer="91"/>
 <pinref part="L11" gate="G$1" pin="VDD"/>
-<pinref part="C14" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="V4" gate="1" pin="+5V"/>
-<wire x1="119.38" y1="248.92" x2="119.38" y2="246.38" width="0.1524" layer="91"/>
-<wire x1="119.38" y1="246.38" x2="119.38" y2="243.586" width="0.1524" layer="91"/>
-<wire x1="121.92" y1="246.38" x2="119.38" y2="246.38" width="0.1524" layer="91"/>
-<junction x="119.38" y="246.38"/>
+<wire x1="119.38" y1="248.92" x2="119.38" y2="243.586" width="0.1524" layer="91"/>
 <pinref part="L12" gate="G$1" pin="VDD"/>
-<pinref part="C13" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="V5" gate="1" pin="+5V"/>
-<wire x1="152.4" y1="248.92" x2="152.4" y2="246.38" width="0.1524" layer="91"/>
-<wire x1="152.4" y1="246.38" x2="152.4" y2="243.586" width="0.1524" layer="91"/>
-<wire x1="154.94" y1="246.38" x2="152.4" y2="246.38" width="0.1524" layer="91"/>
-<junction x="152.4" y="246.38"/>
+<wire x1="152.4" y1="248.92" x2="152.4" y2="243.586" width="0.1524" layer="91"/>
 <pinref part="L13" gate="G$1" pin="VDD"/>
-<pinref part="C12" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="V6" gate="1" pin="+5V"/>
-<wire x1="185.42" y1="248.92" x2="185.42" y2="246.38" width="0.1524" layer="91"/>
-<wire x1="185.42" y1="246.38" x2="185.42" y2="243.586" width="0.1524" layer="91"/>
-<wire x1="187.96" y1="246.38" x2="185.42" y2="246.38" width="0.1524" layer="91"/>
-<junction x="185.42" y="246.38"/>
+<wire x1="185.42" y1="248.92" x2="185.42" y2="243.586" width="0.1524" layer="91"/>
 <pinref part="L14" gate="G$1" pin="VDD"/>
-<pinref part="C11" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="V7" gate="1" pin="+5V"/>
-<wire x1="218.44" y1="248.92" x2="218.44" y2="246.38" width="0.1524" layer="91"/>
-<wire x1="218.44" y1="246.38" x2="218.44" y2="243.586" width="0.1524" layer="91"/>
-<wire x1="220.98" y1="246.38" x2="218.44" y2="246.38" width="0.1524" layer="91"/>
-<junction x="218.44" y="246.38"/>
+<wire x1="218.44" y1="248.92" x2="218.44" y2="243.586" width="0.1524" layer="91"/>
 <pinref part="L15" gate="G$1" pin="VDD"/>
-<pinref part="C10" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="V8" gate="1" pin="+5V"/>
@@ -1957,65 +1617,41 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <segment>
 <pinref part="V10" gate="1" pin="+5V"/>
 <wire x1="20.32" y1="203.2" x2="20.32" y2="200.66" width="0.1524" layer="91"/>
+<pinref part="L17" gate="G$1" pin="VDD"/>
+<pinref part="C10" gate="G$1" pin="1"/>
 <wire x1="20.32" y1="200.66" x2="20.32" y2="197.866" width="0.1524" layer="91"/>
 <wire x1="22.86" y1="200.66" x2="20.32" y2="200.66" width="0.1524" layer="91"/>
 <junction x="20.32" y="200.66"/>
-<pinref part="L17" gate="G$1" pin="VDD"/>
-<pinref part="C17" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="V11" gate="1" pin="+5V"/>
-<wire x1="53.34" y1="203.2" x2="53.34" y2="200.66" width="0.1524" layer="91"/>
-<wire x1="53.34" y1="200.66" x2="53.34" y2="197.866" width="0.1524" layer="91"/>
-<wire x1="55.88" y1="200.66" x2="53.34" y2="200.66" width="0.1524" layer="91"/>
-<junction x="53.34" y="200.66"/>
+<wire x1="53.34" y1="203.2" x2="53.34" y2="197.866" width="0.1524" layer="91"/>
 <pinref part="L18" gate="G$1" pin="VDD"/>
-<pinref part="C18" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="V12" gate="1" pin="+5V"/>
-<wire x1="86.36" y1="203.2" x2="86.36" y2="200.66" width="0.1524" layer="91"/>
-<wire x1="86.36" y1="200.66" x2="86.36" y2="197.866" width="0.1524" layer="91"/>
-<wire x1="88.9" y1="200.66" x2="86.36" y2="200.66" width="0.1524" layer="91"/>
-<junction x="86.36" y="200.66"/>
+<wire x1="86.36" y1="203.2" x2="86.36" y2="197.866" width="0.1524" layer="91"/>
 <pinref part="L19" gate="G$1" pin="VDD"/>
-<pinref part="C19" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="V13" gate="1" pin="+5V"/>
-<wire x1="119.38" y1="203.2" x2="119.38" y2="200.66" width="0.1524" layer="91"/>
-<wire x1="119.38" y1="200.66" x2="119.38" y2="197.866" width="0.1524" layer="91"/>
-<wire x1="121.92" y1="200.66" x2="119.38" y2="200.66" width="0.1524" layer="91"/>
-<junction x="119.38" y="200.66"/>
+<wire x1="119.38" y1="203.2" x2="119.38" y2="197.866" width="0.1524" layer="91"/>
 <pinref part="L20" gate="G$1" pin="VDD"/>
-<pinref part="C20" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="V14" gate="1" pin="+5V"/>
-<wire x1="152.4" y1="203.2" x2="152.4" y2="200.66" width="0.1524" layer="91"/>
-<wire x1="152.4" y1="200.66" x2="152.4" y2="197.866" width="0.1524" layer="91"/>
-<wire x1="154.94" y1="200.66" x2="152.4" y2="200.66" width="0.1524" layer="91"/>
-<junction x="152.4" y="200.66"/>
+<wire x1="152.4" y1="203.2" x2="152.4" y2="197.866" width="0.1524" layer="91"/>
 <pinref part="L21" gate="G$1" pin="VDD"/>
-<pinref part="C21" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="V15" gate="1" pin="+5V"/>
-<wire x1="185.42" y1="203.2" x2="185.42" y2="200.66" width="0.1524" layer="91"/>
-<wire x1="185.42" y1="200.66" x2="185.42" y2="197.866" width="0.1524" layer="91"/>
-<wire x1="187.96" y1="200.66" x2="185.42" y2="200.66" width="0.1524" layer="91"/>
-<junction x="185.42" y="200.66"/>
+<wire x1="185.42" y1="203.2" x2="185.42" y2="197.866" width="0.1524" layer="91"/>
 <pinref part="L22" gate="G$1" pin="VDD"/>
-<pinref part="C22" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="V16" gate="1" pin="+5V"/>
-<wire x1="218.44" y1="203.2" x2="218.44" y2="200.66" width="0.1524" layer="91"/>
-<wire x1="218.44" y1="200.66" x2="218.44" y2="197.866" width="0.1524" layer="91"/>
-<wire x1="220.98" y1="200.66" x2="218.44" y2="200.66" width="0.1524" layer="91"/>
-<junction x="218.44" y="200.66"/>
+<wire x1="218.44" y1="203.2" x2="218.44" y2="197.866" width="0.1524" layer="91"/>
 <pinref part="L23" gate="G$1" pin="VDD"/>
-<pinref part="C23" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="V17" gate="1" pin="+5V"/>
@@ -2038,56 +1674,40 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <segment>
 <pinref part="V19" gate="1" pin="+5V"/>
 <wire x1="53.34" y1="157.48" x2="53.34" y2="154.94" width="0.1524" layer="91"/>
+<pinref part="L26" gate="G$1" pin="VDD"/>
+<pinref part="C13" gate="G$1" pin="1"/>
 <wire x1="53.34" y1="154.94" x2="53.34" y2="152.146" width="0.1524" layer="91"/>
 <wire x1="55.88" y1="154.94" x2="53.34" y2="154.94" width="0.1524" layer="91"/>
 <junction x="53.34" y="154.94"/>
-<pinref part="L26" gate="G$1" pin="VDD"/>
-<pinref part="C31" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="V20" gate="1" pin="+5V"/>
-<wire x1="86.36" y1="157.48" x2="86.36" y2="154.94" width="0.1524" layer="91"/>
-<wire x1="86.36" y1="154.94" x2="86.36" y2="152.146" width="0.1524" layer="91"/>
-<wire x1="88.9" y1="154.94" x2="86.36" y2="154.94" width="0.1524" layer="91"/>
-<junction x="86.36" y="154.94"/>
+<wire x1="86.36" y1="157.48" x2="86.36" y2="152.146" width="0.1524" layer="91"/>
 <pinref part="L27" gate="G$1" pin="VDD"/>
-<pinref part="C30" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="V21" gate="1" pin="+5V"/>
-<wire x1="119.38" y1="157.48" x2="119.38" y2="154.94" width="0.1524" layer="91"/>
-<wire x1="119.38" y1="154.94" x2="119.38" y2="152.146" width="0.1524" layer="91"/>
-<wire x1="121.92" y1="154.94" x2="119.38" y2="154.94" width="0.1524" layer="91"/>
-<junction x="119.38" y="154.94"/>
+<wire x1="119.38" y1="157.48" x2="119.38" y2="152.146" width="0.1524" layer="91"/>
 <pinref part="L28" gate="G$1" pin="VDD"/>
-<pinref part="C29" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="V22" gate="1" pin="+5V"/>
-<wire x1="152.4" y1="157.48" x2="152.4" y2="154.94" width="0.1524" layer="91"/>
-<wire x1="152.4" y1="154.94" x2="152.4" y2="152.146" width="0.1524" layer="91"/>
-<wire x1="154.94" y1="154.94" x2="152.4" y2="154.94" width="0.1524" layer="91"/>
-<junction x="152.4" y="154.94"/>
+<wire x1="152.4" y1="157.48" x2="152.4" y2="152.146" width="0.1524" layer="91"/>
 <pinref part="L29" gate="G$1" pin="VDD"/>
-<pinref part="C28" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="V23" gate="1" pin="+5V"/>
-<wire x1="185.42" y1="157.48" x2="185.42" y2="154.94" width="0.1524" layer="91"/>
-<wire x1="185.42" y1="154.94" x2="185.42" y2="152.146" width="0.1524" layer="91"/>
-<wire x1="187.96" y1="154.94" x2="185.42" y2="154.94" width="0.1524" layer="91"/>
-<junction x="185.42" y="154.94"/>
+<wire x1="185.42" y1="157.48" x2="185.42" y2="152.146" width="0.1524" layer="91"/>
 <pinref part="L30" gate="G$1" pin="VDD"/>
-<pinref part="C27" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="V24" gate="1" pin="+5V"/>
 <wire x1="218.44" y1="157.48" x2="218.44" y2="154.94" width="0.1524" layer="91"/>
+<pinref part="L31" gate="G$1" pin="VDD"/>
+<pinref part="C12" gate="G$1" pin="1"/>
 <wire x1="218.44" y1="154.94" x2="218.44" y2="152.146" width="0.1524" layer="91"/>
 <wire x1="220.98" y1="154.94" x2="218.44" y2="154.94" width="0.1524" layer="91"/>
 <junction x="218.44" y="154.94"/>
-<pinref part="L31" gate="G$1" pin="VDD"/>
-<pinref part="C26" gate="G$1" pin="1"/>
 </segment>
 <segment>
 <pinref part="V25" gate="1" pin="+5V"/>
@@ -2170,78 +1790,6 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <pinref part="L40" gate="G$1" pin="VDD"/>
 <pinref part="C40" gate="G$1" pin="1"/>
 </segment>
-<segment>
-<pinref part="V34" gate="1" pin="+5V"/>
-<wire x1="20.32" y1="66.04" x2="20.32" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="20.32" y1="63.5" x2="20.32" y2="60.706" width="0.1524" layer="91"/>
-<wire x1="22.86" y1="63.5" x2="20.32" y2="63.5" width="0.1524" layer="91"/>
-<junction x="20.32" y="63.5"/>
-<pinref part="L41" gate="G$1" pin="VDD"/>
-<pinref part="C41" gate="G$1" pin="1"/>
-</segment>
-<segment>
-<pinref part="V35" gate="1" pin="+5V"/>
-<wire x1="53.34" y1="66.04" x2="53.34" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="53.34" y1="63.5" x2="53.34" y2="60.706" width="0.1524" layer="91"/>
-<wire x1="55.88" y1="63.5" x2="53.34" y2="63.5" width="0.1524" layer="91"/>
-<junction x="53.34" y="63.5"/>
-<pinref part="L42" gate="G$1" pin="VDD"/>
-<pinref part="C42" gate="G$1" pin="1"/>
-</segment>
-<segment>
-<pinref part="V36" gate="1" pin="+5V"/>
-<wire x1="86.36" y1="66.04" x2="86.36" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="86.36" y1="63.5" x2="86.36" y2="60.706" width="0.1524" layer="91"/>
-<wire x1="88.9" y1="63.5" x2="86.36" y2="63.5" width="0.1524" layer="91"/>
-<junction x="86.36" y="63.5"/>
-<pinref part="L43" gate="G$1" pin="VDD"/>
-<pinref part="C43" gate="G$1" pin="1"/>
-</segment>
-<segment>
-<pinref part="V37" gate="1" pin="+5V"/>
-<wire x1="119.38" y1="66.04" x2="119.38" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="119.38" y1="63.5" x2="119.38" y2="60.706" width="0.1524" layer="91"/>
-<wire x1="121.92" y1="63.5" x2="119.38" y2="63.5" width="0.1524" layer="91"/>
-<junction x="119.38" y="63.5"/>
-<pinref part="L44" gate="G$1" pin="VDD"/>
-<pinref part="C44" gate="G$1" pin="1"/>
-</segment>
-<segment>
-<pinref part="V38" gate="1" pin="+5V"/>
-<wire x1="152.4" y1="66.04" x2="152.4" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="152.4" y1="63.5" x2="152.4" y2="60.706" width="0.1524" layer="91"/>
-<wire x1="154.94" y1="63.5" x2="152.4" y2="63.5" width="0.1524" layer="91"/>
-<junction x="152.4" y="63.5"/>
-<pinref part="L45" gate="G$1" pin="VDD"/>
-<pinref part="C45" gate="G$1" pin="1"/>
-</segment>
-<segment>
-<pinref part="V39" gate="1" pin="+5V"/>
-<wire x1="185.42" y1="66.04" x2="185.42" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="185.42" y1="63.5" x2="185.42" y2="60.706" width="0.1524" layer="91"/>
-<wire x1="187.96" y1="63.5" x2="185.42" y2="63.5" width="0.1524" layer="91"/>
-<junction x="185.42" y="63.5"/>
-<pinref part="L46" gate="G$1" pin="VDD"/>
-<pinref part="C46" gate="G$1" pin="1"/>
-</segment>
-<segment>
-<pinref part="V40" gate="1" pin="+5V"/>
-<wire x1="218.44" y1="66.04" x2="218.44" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="218.44" y1="63.5" x2="218.44" y2="60.706" width="0.1524" layer="91"/>
-<wire x1="220.98" y1="63.5" x2="218.44" y2="63.5" width="0.1524" layer="91"/>
-<junction x="218.44" y="63.5"/>
-<pinref part="L47" gate="G$1" pin="VDD"/>
-<pinref part="C47" gate="G$1" pin="1"/>
-</segment>
-<segment>
-<pinref part="V41" gate="1" pin="+5V"/>
-<wire x1="251.46" y1="66.04" x2="251.46" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="251.46" y1="63.5" x2="251.46" y2="60.706" width="0.1524" layer="91"/>
-<wire x1="254" y1="63.5" x2="251.46" y2="63.5" width="0.1524" layer="91"/>
-<junction x="251.46" y="63.5"/>
-<pinref part="L48" gate="G$1" pin="VDD"/>
-<pinref part="C48" gate="G$1" pin="1"/>
-</segment>
 </net>
 <net name="DOUT" class="0">
 <segment>
@@ -2251,9 +1799,9 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <label x="337.82" y="20.32" size="1.778" layer="95" rot="R270" xref="yes"/>
 </segment>
 <segment>
-<pinref part="L48" gate="G$1" pin="DO"/>
-<wire x1="264.16" y1="43.18" x2="269.24" y2="43.18" width="0.1524" layer="91"/>
-<label x="269.24" y="43.18" size="1.778" layer="95" xref="yes"/>
+<label x="271.78" y="88.9" size="1.778" layer="95" xref="yes"/>
+<pinref part="L40" gate="G$1" pin="DO"/>
+<wire x1="271.78" y1="88.9" x2="264.16" y2="88.9" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="DIN" class="0">
@@ -2554,68 +2102,15 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <wire x1="5.08" y1="88.9" x2="7.62" y2="88.9" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$33" class="0">
-<segment>
-<wire x1="33.02" y1="43.18" x2="40.64" y2="43.18" width="0.1524" layer="91"/>
-<pinref part="L41" gate="G$1" pin="DO"/>
-<pinref part="L42" gate="G$1" pin="DI"/>
-</segment>
-</net>
-<net name="N$34" class="0">
-<segment>
-<wire x1="66.04" y1="43.18" x2="73.66" y2="43.18" width="0.1524" layer="91"/>
-<pinref part="L42" gate="G$1" pin="DO"/>
-<pinref part="L43" gate="G$1" pin="DI"/>
-</segment>
-</net>
-<net name="N$35" class="0">
-<segment>
-<wire x1="99.06" y1="43.18" x2="106.68" y2="43.18" width="0.1524" layer="91"/>
-<pinref part="L43" gate="G$1" pin="DO"/>
-<pinref part="L44" gate="G$1" pin="DI"/>
-</segment>
-</net>
-<net name="N$36" class="0">
-<segment>
-<wire x1="132.08" y1="43.18" x2="139.7" y2="43.18" width="0.1524" layer="91"/>
-<pinref part="L44" gate="G$1" pin="DO"/>
-<pinref part="L45" gate="G$1" pin="DI"/>
-</segment>
-</net>
-<net name="N$37" class="0">
-<segment>
-<wire x1="165.1" y1="43.18" x2="172.72" y2="43.18" width="0.1524" layer="91"/>
-<pinref part="L45" gate="G$1" pin="DO"/>
-<pinref part="L46" gate="G$1" pin="DI"/>
-</segment>
-</net>
-<net name="N$38" class="0">
-<segment>
-<wire x1="198.12" y1="43.18" x2="205.74" y2="43.18" width="0.1524" layer="91"/>
-<pinref part="L46" gate="G$1" pin="DO"/>
-<pinref part="L47" gate="G$1" pin="DI"/>
-</segment>
-</net>
-<net name="N$39" class="0">
-<segment>
-<wire x1="231.14" y1="43.18" x2="238.76" y2="43.18" width="0.1524" layer="91"/>
-<pinref part="L47" gate="G$1" pin="DO"/>
-<pinref part="L48" gate="G$1" pin="DI"/>
-</segment>
-</net>
-<net name="N$47" class="0">
-<segment>
-<pinref part="L41" gate="G$1" pin="DI"/>
-<wire x1="5.08" y1="73.66" x2="5.08" y2="43.18" width="0.1524" layer="91"/>
-<wire x1="5.08" y1="43.18" x2="7.62" y2="43.18" width="0.1524" layer="91"/>
-<pinref part="L40" gate="G$1" pin="DO"/>
-<wire x1="264.16" y1="88.9" x2="264.16" y2="73.66" width="0.1524" layer="91"/>
-<wire x1="264.16" y1="73.66" x2="5.08" y2="73.66" width="0.1524" layer="91"/>
-</segment>
-</net>
 </nets>
 </sheet>
 </sheets>
 </schematic>
 </drawing>
+<compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
+</compatibility>
 </eagle>
