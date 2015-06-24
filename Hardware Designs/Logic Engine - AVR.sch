@@ -11933,7 +11933,7 @@ Vision reference for SMD placement equipment</description>
 <part name="P+6" library="supply1" deviceset="+5V" device=""/>
 <part name="GND11" library="supply1" deviceset="GND" device=""/>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
-<part name="FTDI" library="carduino" deviceset="PINHD-1X6" device="CLEAN" value="GRN  TX RX  5V   G  BLK"/>
+<part name="FTDI" library="carduino" deviceset="PINHD-1X6" device="CLEAN" value="GRN TX RX 5V G BLK"/>
 <part name="FRAME1" library="frames" deviceset="LETTER_L" device=""/>
 <part name="I2C" library="carduino" deviceset="PINHD-1X4" device="CB"/>
 <part name="P+10" library="supply1" deviceset="+5V" device=""/>
@@ -11999,6 +11999,10 @@ Vision reference for SMD placement equipment</description>
 <part name="P+17" library="supply1" deviceset="+5V" device=""/>
 <part name="C5" library="adafruit" deviceset="CPOL-US" device="D" value="100uF"/>
 <part name="C6" library="adafruit" deviceset="C-US" device="C0805K" value="10uF"/>
+<part name="R4" library="SparkFun-Resistors" deviceset="RESISTOR" device="0603" value="10K"/>
+<part name="R5" library="SparkFun-Resistors" deviceset="RESISTOR" device="0603" value="10K"/>
+<part name="GND13" library="supply1" deviceset="GND" device=""/>
+<part name="GND14" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -12118,21 +12122,21 @@ required for SD Card</text>
 <instance part="REG" gate="G$1" x="88.9" y="160.02"/>
 <instance part="R8" gate="G$1" x="106.68" y="160.02" rot="R270"/>
 <instance part="JP1" gate="A" x="190.5" y="83.82"/>
-<instance part="S4" gate="G$1" x="190.5" y="116.84" smashed="yes">
-<attribute name="NAME" x="179.07" y="117.475" size="1.778" layer="95"/>
-<attribute name="VALUE" x="184.15" y="111.76" size="1.778" layer="96"/>
+<instance part="S4" gate="G$1" x="193.04" y="116.84" smashed="yes">
+<attribute name="NAME" x="184.15" y="117.475" size="1.778" layer="95"/>
+<attribute name="VALUE" x="186.69" y="111.76" size="1.778" layer="96"/>
 </instance>
-<instance part="S3" gate="G$1" x="190.5" y="111.76" smashed="yes">
-<attribute name="NAME" x="179.07" y="112.395" size="1.778" layer="95"/>
-<attribute name="VALUE" x="184.15" y="106.68" size="1.778" layer="96"/>
+<instance part="S3" gate="G$1" x="193.04" y="111.76" smashed="yes">
+<attribute name="NAME" x="184.15" y="112.395" size="1.778" layer="95"/>
+<attribute name="VALUE" x="186.69" y="106.68" size="1.778" layer="96"/>
 </instance>
-<instance part="S2" gate="G$1" x="190.5" y="106.68" smashed="yes">
-<attribute name="NAME" x="179.07" y="107.315" size="1.778" layer="95"/>
-<attribute name="VALUE" x="184.15" y="101.6" size="1.778" layer="96"/>
+<instance part="S2" gate="G$1" x="193.04" y="106.68" smashed="yes">
+<attribute name="NAME" x="184.15" y="107.315" size="1.778" layer="95"/>
+<attribute name="VALUE" x="186.69" y="101.6" size="1.778" layer="96"/>
 </instance>
-<instance part="S5" gate="G$1" x="190.5" y="101.6" smashed="yes">
-<attribute name="NAME" x="179.07" y="102.235" size="1.778" layer="95"/>
-<attribute name="VALUE" x="184.15" y="96.52" size="1.778" layer="96"/>
+<instance part="S5" gate="G$1" x="193.04" y="101.6" smashed="yes">
+<attribute name="NAME" x="184.15" y="102.235" size="1.778" layer="95"/>
+<attribute name="VALUE" x="186.69" y="96.52" size="1.778" layer="96"/>
 </instance>
 <instance part="GND16" gate="1" x="195.58" y="73.66"/>
 <instance part="P+17" gate="1" x="187.96" y="73.66" smashed="yes" rot="R180">
@@ -12140,6 +12144,10 @@ required for SD Card</text>
 </instance>
 <instance part="C5" gate="G$1" x="53.34" y="165.1"/>
 <instance part="C6" gate="G$1" x="78.74" y="93.98"/>
+<instance part="R4" gate="G$1" x="182.88" y="116.84"/>
+<instance part="R5" gate="G$1" x="182.88" y="111.76"/>
+<instance part="GND13" gate="1" x="175.26" y="116.84" rot="R270"/>
+<instance part="GND14" gate="1" x="175.26" y="111.76" rot="R270"/>
 </instances>
 <busses>
 </busses>
@@ -12295,6 +12303,14 @@ required for SD Card</text>
 <segment>
 <pinref part="GND24" gate="1" pin="GND"/>
 <pinref part="C6" gate="G$1" pin="2"/>
+</segment>
+<segment>
+<pinref part="R4" gate="G$1" pin="1"/>
+<pinref part="GND13" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="R5" gate="G$1" pin="1"/>
+<pinref part="GND14" gate="1" pin="GND"/>
 </segment>
 </net>
 <net name="N$1" class="0">
@@ -12784,9 +12800,9 @@ required for SD Card</text>
 <wire x1="106.68" y1="33.02" x2="96.52" y2="33.02" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<label x="193.04" y="101.6" size="1.778" layer="95"/>
+<label x="195.58" y="101.6" size="1.778" layer="95"/>
 <pinref part="S5" gate="G$1" pin="1"/>
-<wire x1="187.96" y1="101.6" x2="193.04" y2="101.6" width="0.1524" layer="91"/>
+<wire x1="190.5" y1="101.6" x2="195.58" y2="101.6" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="DIGITAL4" class="0">
@@ -12800,9 +12816,12 @@ required for SD Card</text>
 <wire x1="96.52" y1="35.56" x2="106.68" y2="35.56" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<label x="193.04" y="116.84" size="1.778" layer="95"/>
+<label x="195.58" y="116.84" size="1.778" layer="95"/>
 <pinref part="S4" gate="G$1" pin="1"/>
-<wire x1="187.96" y1="116.84" x2="193.04" y2="116.84" width="0.1524" layer="91"/>
+<wire x1="190.5" y1="116.84" x2="195.58" y2="116.84" width="0.1524" layer="91"/>
+<pinref part="R4" gate="G$1" pin="2"/>
+<wire x1="187.96" y1="116.84" x2="190.5" y2="116.84" width="0.1524" layer="91"/>
+<junction x="190.5" y="116.84"/>
 </segment>
 </net>
 <net name="DIGITAL3" class="0">
@@ -12816,9 +12835,12 @@ required for SD Card</text>
 <wire x1="96.52" y1="38.1" x2="106.68" y2="38.1" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<label x="193.04" y="111.76" size="1.778" layer="95"/>
+<label x="195.58" y="111.76" size="1.778" layer="95"/>
 <pinref part="S3" gate="G$1" pin="1"/>
-<wire x1="187.96" y1="111.76" x2="193.04" y2="111.76" width="0.1524" layer="91"/>
+<wire x1="190.5" y1="111.76" x2="195.58" y2="111.76" width="0.1524" layer="91"/>
+<pinref part="R5" gate="G$1" pin="2"/>
+<wire x1="187.96" y1="111.76" x2="190.5" y2="111.76" width="0.1524" layer="91"/>
+<junction x="190.5" y="111.76"/>
 </segment>
 </net>
 <net name="DIGITAL2" class="0">
@@ -12832,9 +12854,9 @@ required for SD Card</text>
 <wire x1="96.52" y1="40.64" x2="106.68" y2="40.64" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<label x="193.04" y="106.68" size="1.778" layer="95"/>
+<label x="195.58" y="106.68" size="1.778" layer="95"/>
 <pinref part="S2" gate="G$1" pin="1"/>
-<wire x1="187.96" y1="106.68" x2="193.04" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="190.5" y1="106.68" x2="195.58" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$5" class="1">
