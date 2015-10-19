@@ -978,10 +978,6 @@ Standard 0603 ceramic capacitor, and 0.1" leaded capacitor.</description>
 <sheets>
 <sheet>
 <plain>
-<text x="-63.5" y="363.22" size="25.4" layer="91">Please pardon the mess!</text>
-<text x="134.62" y="335.28" size="8.89" layer="91" align="center">LEDs are not positioned like this on the board; they're in a serpentine configuration.
-Also, capacitors shown aren't necessarily position right next to the LED shown.
-My bad!</text>
 </plain>
 <instances>
 <instance part="IN" gate="A" x="317.5" y="27.94"/>
@@ -2107,10 +2103,4 @@ My bad!</text>
 </sheets>
 </schematic>
 </drawing>
-<compatibility>
-<note version="6.3" minversion="6.2.2" severity="warning">
-Since Version 6.2.2 text objects can contain more than one line,
-which will not be processed correctly with this version.
-</note>
-</compatibility>
 </eagle>

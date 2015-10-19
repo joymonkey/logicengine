@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="6.6.0">
+<eagle version="7.4.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.005" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.0625" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.0625" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -19,28 +19,28 @@
 <layer number="19" name="Unrouted" color="6" fill="1" visible="yes" active="yes"/>
 <layer number="20" name="Dimension" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="21" name="tPlace" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="22" name="bPlace" color="7" fill="1" visible="no" active="yes"/>
+<layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="24" name="bOrigins" color="15" fill="1" visible="no" active="yes"/>
+<layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
-<layer number="29" name="tStop" color="7" fill="3" visible="yes" active="yes"/>
-<layer number="30" name="bStop" color="7" fill="6" visible="yes" active="yes"/>
-<layer number="31" name="tCream" color="7" fill="4" visible="yes" active="yes"/>
-<layer number="32" name="bCream" color="7" fill="5" visible="yes" active="yes"/>
-<layer number="33" name="tFinish" color="6" fill="3" visible="yes" active="yes"/>
-<layer number="34" name="bFinish" color="6" fill="6" visible="yes" active="yes"/>
-<layer number="35" name="tGlue" color="7" fill="4" visible="yes" active="yes"/>
-<layer number="36" name="bGlue" color="7" fill="5" visible="yes" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
+<layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
+<layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
+<layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
+<layer number="33" name="tFinish" color="6" fill="3" visible="no" active="yes"/>
+<layer number="34" name="bFinish" color="6" fill="6" visible="no" active="yes"/>
+<layer number="35" name="tGlue" color="7" fill="4" visible="no" active="yes"/>
+<layer number="36" name="bGlue" color="7" fill="5" visible="no" active="yes"/>
 <layer number="37" name="tTest" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="38" name="bTest" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="39" name="tKeepout" color="4" fill="11" visible="yes" active="yes"/>
-<layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
-<layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
-<layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
-<layer number="43" name="vRestrict" color="2" fill="10" visible="yes" active="yes"/>
+<layer number="39" name="tKeepout" color="4" fill="11" visible="no" active="yes"/>
+<layer number="40" name="bKeepout" color="1" fill="11" visible="no" active="yes"/>
+<layer number="41" name="tRestrict" color="4" fill="10" visible="no" active="yes"/>
+<layer number="42" name="bRestrict" color="1" fill="10" visible="no" active="yes"/>
+<layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="46" name="Milling" color="3" fill="1" visible="yes" active="yes"/>
@@ -127,34 +127,26 @@
 </layers>
 <board>
 <plain>
-<text x="0.508" y="26.035" size="1.016" layer="21" font="vector" ratio="15" rot="SR270">+5V</text>
-<wire x1="1.27" y1="34.29" x2="60.706" y2="34.29" width="0" layer="20"/>
-<wire x1="60.706" y1="34.29" x2="61.976" y2="33.02" width="0" layer="20" curve="-90"/>
-<wire x1="61.976" y1="33.02" x2="61.976" y2="19.939" width="0" layer="20"/>
-<wire x1="61.976" y1="19.939" x2="60.706" y2="18.669" width="0" layer="20" curve="-90"/>
-<wire x1="60.706" y1="18.669" x2="58.928" y2="18.669" width="0" layer="20"/>
-<wire x1="1.27" y1="34.29" x2="0" y2="33.02" width="0" layer="20" curve="90"/>
-<wire x1="0" y1="33.02" x2="0" y2="19.939" width="0" layer="20"/>
-<wire x1="0" y1="19.939" x2="1.27" y2="18.669" width="0" layer="20" curve="90"/>
-<wire x1="1.27" y1="18.669" x2="3.302" y2="18.669" width="0" layer="20"/>
-<wire x1="60.706" y1="0" x2="3.175" y2="0" width="0" layer="20"/>
-<wire x1="3.175" y1="0" x2="0" y2="3.175" width="0" layer="20" curve="-90"/>
-<wire x1="0" y1="3.175" x2="0" y2="14.351" width="0" layer="20"/>
-<wire x1="60.706" y1="0" x2="61.976" y2="1.27" width="0" layer="20" curve="90"/>
-<wire x1="61.976" y1="1.27" x2="61.976" y2="14.351" width="0" layer="20"/>
-<wire x1="61.976" y1="14.351" x2="60.706" y2="15.621" width="0" layer="20" curve="90"/>
-<wire x1="60.706" y1="15.621" x2="58.928" y2="15.621" width="0" layer="20"/>
-<wire x1="0" y1="14.351" x2="1.27" y2="15.621" width="0" layer="20" curve="-90"/>
-<wire x1="1.27" y1="15.621" x2="3.302" y2="15.621" width="0" layer="20"/>
-<text x="0.508" y="29.591" size="1.143" layer="21" font="vector" ratio="15" rot="SR270">GND</text>
-<text x="61.468" y="14.351" size="1.143" layer="26" font="vector" ratio="15" rot="SMR270">GND</text>
-<text x="61.468" y="10.795" size="1.016" layer="26" font="vector" ratio="15" rot="SMR270">+5V</text>
-<text x="0.508" y="26.67" size="1.143" layer="26" font="vector" ratio="15" rot="SMR90">GND</text>
-<text x="61.468" y="8.001" size="1.016" layer="21" font="vector" ratio="15" rot="SR90">+5V</text>
-<text x="61.468" y="11.303" size="1.143" layer="21" font="vector" ratio="15" rot="R90">GND</text>
-<text x="61.468" y="4.699" size="1.143" layer="21" font="vector" ratio="15" rot="R90">OUT</text>
-<text x="0.635" y="22.733" size="1.143" layer="21" font="vector" ratio="15" rot="SR270">IN</text>
-<text x="0.508" y="23.241" size="1.016" layer="26" font="vector" ratio="15" rot="SMR90">+5V</text>
+<text x="0.508" y="25.019" size="1.016" layer="21" font="vector" ratio="15" rot="SR270">+5V</text>
+<wire x1="0" y1="34.798" x2="61.976" y2="34.798" width="0" layer="20"/>
+<wire x1="61.976" y1="34.798" x2="61.976" y2="17.653" width="0" layer="20"/>
+<wire x1="61.976" y1="17.653" x2="58.928" y2="17.653" width="0" layer="20"/>
+<wire x1="0" y1="34.798" x2="0" y2="17.653" width="0" layer="20"/>
+<wire x1="0" y1="17.653" x2="3.302" y2="17.653" width="0" layer="20"/>
+<wire x1="61.976" y1="0" x2="0" y2="0" width="0" layer="20"/>
+<wire x1="0" y1="0" x2="0" y2="14.605" width="0" layer="20"/>
+<wire x1="61.976" y1="0" x2="61.976" y2="14.605" width="0" layer="20"/>
+<wire x1="61.976" y1="14.605" x2="58.928" y2="14.605" width="0" layer="20"/>
+<wire x1="0" y1="14.605" x2="3.302" y2="14.605" width="0" layer="20"/>
+<text x="0.508" y="28.575" size="1.143" layer="21" font="vector" ratio="15" rot="SR270">GND</text>
+<text x="61.468" y="13.335" size="1.143" layer="26" font="vector" ratio="15" rot="SMR270">GND</text>
+<text x="61.468" y="9.779" size="1.016" layer="26" font="vector" ratio="15" rot="SMR270">+5V</text>
+<text x="0.508" y="25.654" size="1.143" layer="26" font="vector" ratio="15" rot="SMR90">GND</text>
+<text x="61.468" y="6.985" size="1.016" layer="21" font="vector" ratio="15" rot="SR90">+5V</text>
+<text x="61.468" y="10.287" size="1.143" layer="21" font="vector" ratio="15" rot="R90">GND</text>
+<text x="61.468" y="3.683" size="1.143" layer="21" font="vector" ratio="15" rot="R90">OUT</text>
+<text x="0.635" y="21.717" size="1.143" layer="21" font="vector" ratio="15" rot="SR270">IN</text>
+<text x="0.508" y="22.225" size="1.016" layer="26" font="vector" ratio="15" rot="SMR90">+5V</text>
 <rectangle x1="24.7015" y1="0.0635" x2="24.8285" y2="0.1905" layer="200"/>
 <rectangle x1="27.2415" y1="0.0635" x2="27.3685" y2="0.1905" layer="200"/>
 <rectangle x1="31.3055" y1="0.0635" x2="31.6865" y2="0.1905" layer="200"/>
@@ -5847,16 +5839,18 @@
 <rectangle x1="59.7535" y1="33.9725" x2="60.8965" y2="34.0995" layer="200"/>
 <rectangle x1="49.3395" y1="34.0995" x2="49.5935" y2="34.2265" layer="200"/>
 <rectangle x1="51.6255" y1="34.0995" x2="52.7685" y2="34.2265" layer="200"/>
-<wire x1="58.928" y1="18.669" x2="57.404" y2="17.145" width="0" layer="20" curve="90"/>
-<wire x1="57.404" y1="17.145" x2="58.928" y2="15.621" width="0" layer="20" curve="90"/>
-<wire x1="3.302" y1="18.669" x2="4.826" y2="17.145" width="0" layer="20" curve="-90"/>
-<wire x1="4.826" y1="17.145" x2="3.302" y2="15.621" width="0" layer="20" curve="-90"/>
+<wire x1="58.928" y1="17.653" x2="57.404" y2="16.129" width="0" layer="20" curve="90"/>
+<wire x1="57.404" y1="16.129" x2="58.928" y2="14.605" width="0" layer="20" curve="90"/>
+<wire x1="3.302" y1="17.653" x2="4.826" y2="16.129" width="0" layer="20" curve="-90"/>
+<wire x1="4.826" y1="16.129" x2="3.302" y2="14.605" width="0" layer="20" curve="-90"/>
 <text x="15.24" y="33.147" size="1.27" layer="26" font="vector" ratio="15" distance="40" rot="SMR180" align="center">RSeries Logic Engine </text>
-<text x="0.4318" y="31.8262" size="1.1176" layer="26" font="vector" ratio="15" distance="40" rot="SMR180">Paul Murphy 20150302</text>
+<text x="0.4318" y="31.8262" size="1.1176" layer="26" font="vector" ratio="15" distance="40" rot="SMR180">Paul Murphy 20150702</text>
 <rectangle x1="23.1775" y1="32.4485" x2="23.5585" y2="32.5755" layer="200"/>
 <rectangle x1="23.1775" y1="32.1945" x2="23.3045" y2="32.3215" layer="200"/>
 <rectangle x1="22.4155" y1="32.1945" x2="22.5425" y2="32.3215" layer="200"/>
 <rectangle x1="20.6375" y1="30.9245" x2="21.0185" y2="31.0515" layer="200"/>
+<text x="-5.08" y="-5.08" size="1.27" layer="51" font="fixed">v7.1 : mounting holes and pin headers moved down .04 inches
+       top board outline raised 0.02 inches</text>
 </plain>
 <libraries>
 <library name="rseries">
@@ -6841,6 +6835,9 @@ Please make sure your boards conform to these design rules.</description>
 <autorouter>
 <pass name="Default">
 <param name="RoutingGrid" value="5mil"/>
+<param name="AutoGrid" value="1"/>
+<param name="Efforts" value="0"/>
+<param name="TopRouterVariant" value="1"/>
 <param name="tpViaShape" value="octagon"/>
 <param name="PrefDir.1" value="|"/>
 <param name="PrefDir.2" value="0"/>
@@ -6932,13 +6929,13 @@ Please make sure your boards conform to these design rules.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="IN" library="adafruit" package="1X03" value="" x="3.048" y="24.765" smashed="yes" rot="MR270">
-<attribute name="NAME" x="0.508" y="21.082" size="1.143" layer="26" font="vector" ratio="15" rot="SMR90"/>
-<attribute name="VALUE" x="6.223" y="28.575" size="1.27" layer="28" rot="MR270"/>
+<element name="IN" library="adafruit" package="1X03" value="" x="3.048" y="23.749" smashed="yes" rot="MR270">
+<attribute name="NAME" x="0.508" y="20.066" size="1.143" layer="26" font="vector" ratio="15" rot="SMR90"/>
+<attribute name="VALUE" x="6.223" y="27.559" size="1.27" layer="28" rot="MR270"/>
 </element>
-<element name="OUT" library="adafruit" package="1X03" value="" x="58.928" y="9.525" smashed="yes" rot="R270">
-<attribute name="NAME" x="61.468" y="7.493" size="1.143" layer="26" font="vector" ratio="15" rot="SMR270"/>
-<attribute name="VALUE" x="55.753" y="13.335" size="1.27" layer="27" rot="R270"/>
+<element name="OUT" library="adafruit" package="1X03" value="" x="58.928" y="8.509" smashed="yes" rot="R270">
+<attribute name="NAME" x="61.468" y="6.477" size="1.143" layer="26" font="vector" ratio="15" rot="SMR270"/>
+<attribute name="VALUE" x="55.753" y="12.319" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="FID7" library="SmallBatchLibPre1" package="FIDUCIAL_G15" value="" x="2.54" y="1.905"/>
 <element name="FID8" library="SmallBatchLibPre1" package="FIDUCIAL_G15" value="" x="59.944" y="32.639"/>
@@ -7341,13 +7338,13 @@ Please make sure your boards conform to these design rules.</description>
 <signal name="DOUT">
 <contactref element="OUT" pad="3"/>
 <contactref element="L40" pad="DOUT"/>
-<wire x1="55.463" y1="6.095" x2="58.928" y2="6.985" width="0.8128" layer="1"/>
+<wire x1="55.463" y1="6.095" x2="58.928" y2="5.969" width="0.8128" layer="1"/>
 </signal>
 <signal name="DIN">
 <contactref element="IN" pad="3"/>
 <contactref element="L1" pad="DIN"/>
-<wire x1="3.048" y1="22.225" x2="4.826" y2="24.003" width="0.4064" layer="1"/>
-<wire x1="4.826" y1="24.003" x2="4.826" y2="26.543" width="0.4064" layer="1"/>
+<wire x1="3.048" y1="21.209" x2="4.826" y2="22.987" width="0.4064" layer="1"/>
+<wire x1="4.826" y1="22.987" x2="4.826" y2="26.543" width="0.4064" layer="1"/>
 <wire x1="4.826" y1="26.543" x2="6.478" y2="28.195" width="0.4064" layer="1"/>
 <wire x1="6.478" y1="28.195" x2="6.513" y2="28.195" width="0.4064" layer="1"/>
 </signal>
@@ -7568,4 +7565,10 @@ Please make sure your boards conform to these design rules.</description>
 </signals>
 </board>
 </drawing>
+<compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
+</compatibility>
 </eagle>
