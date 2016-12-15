@@ -1,7 +1,49 @@
-3.0.1
+FastLED3.1.3
+===============
+
+* Add SK6822 timings
+* Add ESP8266 support - note, only tested w/the arduino esp8266 build environment 
+* Improvements to hsv2rgb, palette, and noise performance
+* Improvements to rgb2hsv accuracy
+* Fixed noise discontinuity 
+* Add wino board support
+* Fix scale8 (so now, scale8(255,255) == 255, not 254!)
+* Add ESP8266 parallel output support 
+
+
+FastLED3.1.1
+============
+* Enabled RFDuino/nrf51822 hardware SPI support
+* Fix edge case bug w/HSV palette blending 
+* Fix power management issue w/parallel output
+* Use static_asserts for some more useful compile time errors around bad pins
+* Roll power management into FastLED.show/delay directly
+* Support for adafruit pixies on arduino type platforms that have SoftwareSerial
+  * TODO: support hardware serial on platforms that have it available
+* Add UCS2903 timings
+* Preliminary CPixelView/CRGBSet code - more flexible treatment of groups of arrays 
+  * https://github.com/FastLED/FastLED/wiki/RGBSet-Reference
+
+
+FastLED3.1.0
+============
+* Added support for the following platforms
+  * Arduino Zero
+  * Teensy LC
+  * RFDuino/nrf51822
+  * Spark Core
+* Major internal code reoganization
+* Started doxygen based documentation 
+* Lots of bug/performance fixes
+* Parallel output on various arm platforms
+* lots of new stuff
+
+FastLED3.0.2
+============
 * possibly fix issues #67 and #90 by fixing gcc 4.8.x support
 
-3.0.1
+FastLED3.0.1
+============
 * fix issue #89 w/power management pin always being on
 
 FastLED3.0
@@ -97,7 +139,7 @@ FastLED2
 * Enforce intra-frame timing for ws2801s
 * SM16716 support
 * Add #define FAST_SPI_INTERRUPTS_WRITE_PINS to make sure world is ok w/interrupts and SPI
-* Add #define FORCE_SOFTWARE_SPI for those times when you absolutely don't want to use hardware SPI, ev
+* Add #define FASTLED_FORCE_SOFTWARE_SPI for those times when you absolutely don't want to use hardware SPI, ev
 en if you're using the hardware SPI pins
 * Add pin definitions for the arduino megas - should fix ws2811 support
 * Add pin definitions for the leonardo - should fix spi support and pin mappings
