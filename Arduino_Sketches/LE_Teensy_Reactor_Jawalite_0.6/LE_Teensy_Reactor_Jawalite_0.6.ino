@@ -98,6 +98,8 @@ unsigned int signalMin = 1024;
   #define TEST 3
   #define OFF 4
   byte displayState[3];
+  // display state for the holos
+  byte holoState[3];
   // display state for the PSI, 0=normal random, 1=color1, 2=color2, 3=test, 4=off (0, 3 and 4 are shared with displays above)
   byte psiState[2];
   #define COLOR1 1
@@ -110,8 +112,6 @@ unsigned int signalMin = 1024;
   byte randomStyle[3]={LOGICRandomStyle, LOGICRandomStyle, LOGICRandomStyle}; // start with the default display random mode. This can be altered via extended JawaLite commands.
   byte effectRunning; // tracks if we are in the midst of running an effect
 
-  
-
   //some LED and pattern related stuff...  
   #define TWEENS 14 //lower=faster higher=smoother color crossfades, closely related to the Fade setting
   #define FRONT_PIN 21
@@ -123,7 +123,7 @@ unsigned int signalMin = 1024;
   #define huePin A6 //20analog pin to read Color/Hue shift value     
   #define FJUMP_PIN 0  //front jumper
   #define RJUMP_PIN 1  //rear jumper  
-  #define PAL_PIN 2  //pin used to switch palettes in ADJ mode 
+  #define PAL_PIN 10  //pin used to switch palettes in ADJ mode
   LEDstat ledStatus[176]; //status array will cover both front and rear logics on a Teensy
   CRGB frontLEDs[80];
   CRGB rearLEDs[96];
@@ -221,6 +221,69 @@ unsigned long statusMillis = millis(); //last time status LED was changed, or ef
 unsigned long adjMillis = millis(); //last time we entered an adj mode
 unsigned long statusDelay=1500;
 bool flipflop; 
+
+#define WS2812MAGIC 1 // WS2812 Magic Light  Adafruit feather neopixel array works great!
+#define MAGIC_PIN 25
+#define MAGICLIGHTLEDS 32
+#if(WS2812MAGIC==1)
+CRGB magicLEDs[MAGICLIGHTLEDS];
+#endif
+  
+#define WS2812HOLOS 1 // WS28128 Holo Lights, 4 per light, nice flicker!
+#if(WS2812HOLOS==1)
+#define HOLOS_PIN 9
+#define HOLOTMIN 150
+#define HOLOTMAX 250
+#define HOLOCOLORS 8
+byte holoBright = 255;
+const int holoColors[HOLOCOLORS] = { 0xffffff,0x9999ff,0x999999,0x333333,0xaaaaff,0x5555ff,0xff8888,0x88ff88};   
+unsigned long holoMillis[12] = {0,0,0,0,0,0,0,0,0,0,0,0}; //last time we updated holos   
+CRGB holoLEDs[12]; 
+#endif
+  
+#define TEECESPSI 1 //enable support for two Teeces PSI's (oh, the humanity!)
+#if (TEECESPSI==1)
+#define RPSIbright 15 //rear PSI
+#define FPSIbright 15 //front PSI
+#define PSIstuck 2 //odds (in 10) that a PSI will get partially stuck between 2 colors
+#define TEECES_D_PIN 2
+#define TEECES_C_PIN 4
+#define TEECES_L_PIN 5
+//const int PSIpause[2] = { 6000, 12000 };
+const int PSIpause[2] = { 2000, 4000 };
+const byte PSIdelay[2]PROGMEM = { 50, 75 };
+#endif
+
+#define ADAFRUITSERVO 1 // Enable support for Adafruit Servo Board
+#if (ADAFRUITSERVO==1)
+#include <Adafruit_PWMServoDriver.h>
+#include <Wire.h>
+#define DOMEPANELS 10
+#define SERVOMIN  165 // this is the 'minimum' pulse length count (out of 4096)
+#define SERVOMAX  300 // this is the 'maximum' pulse length count (out of 4096)
+Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
+
+#endif // ADAFRUITSERVO
+
+
+// Teeces PSI Support...
+#if (TEECESPSI==1)
+#include <LedControl.h>
+#undef round
+LedControl lcChain = LedControl(TEECES_D_PIN, TEECES_C_PIN, TEECES_L_PIN, 2); //use Teensy Reactor pins 2,4 & 5, 2 devices
+/*
+   Each PSI has 7 states. For example on the front...
+    0 = 0 columns Red, 6 columns Blue
+    1 = 1 columns Red, 5 columns Blue (11)
+    2 = 2 columns Red, 4 columns Blue (10)
+    3 = 3 columns Red, 3 columns Blue  (9)
+    4 = 4 columns Red, 2 columns Blue  (8)
+    5 = 5 columns Red, 1 columns Blue  (7)
+    6 = 6 columns Red, 0 columns Blue
+*/
+#endif
+
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////  
 ////////////////////////////////////////////////////////////////////////////////////////////////////// 
@@ -427,6 +490,32 @@ void setup() {
     #endif
   }
 
+  #if (TEECESPSI==1)
+  lcChain.shutdown(0, false); //take the device out of shutdown (power save) mode
+  lcChain.clearDisplay(0);
+  lcChain.shutdown(1, false); //take the device out of shutdown (power save) mode
+  lcChain.clearDisplay(1);
+  lcChain.setIntensity(0, FPSIbright); //Front PSI
+  lcChain.setIntensity(1, RPSIbright); //Rear PSI
+  #endif
+
+  #if (ADAFRUITSERVO==1)
+  pwm.begin();
+  pwm.setPWMFreq(60);
+  PanelAllOpen();
+  PanelAllClose();
+  PanelAllOff();
+  #endif //ADAFRUITSERVO
+
+  #if(WS2812HOLOS==1)
+  FastLED.addLeds<WS2812B, HOLOS_PIN, RGB>(holoLEDs, 12);
+  holoState[0]=holoState[1]=holoState[2]=OFF;
+  #endif
+  
+  #if(WS2812MAGIC==1)
+  FastLED.addLeds<WS2812B, MAGIC_PIN, GRB>(magicLEDs, MAGICLIGHTLEDS);
+  #endif
+  
   statusLED[0] = 0x002200; FastLED.show(); //status LED dark green
   //delay(50);
 }
@@ -485,7 +574,7 @@ void parseCommand(char* inputStr) {
   address= atoi(addrStr);        // extract the address
   
   // check for more
-  if(!length>pos) goto beep;            // invalid, no command after address
+  if(!(length>pos)) goto beep;            // invalid, no command after address
 
   // echo the command out, so the other logic gets it
   JEDI_SERIAL.println(inputStr);
@@ -493,7 +582,7 @@ void parseCommand(char* inputStr) {
   // special case of M commands, which take a string argument
   if(inputStr[pos]=='M') {
     pos++;
-    if(!length>pos) goto beep;     // no message argument
+    if(!(length>pos)) goto beep;     // no message argument
     doMcommand(address, inputStr+pos);   // pass rest of string as argument
     return;                     // exit
   }
@@ -501,7 +590,7 @@ void parseCommand(char* inputStr) {
   // other commands, get the numerical argument after the command character
 
   pos++;                             // need to increment in order to peek ahead of command char
-  if(!length>pos) hasArgument=false; // end of string reached, no arguments
+  if(!(length>pos)) hasArgument=false; // end of string reached, no arguments
   else  {
     for(byte i=pos; i<length; i++) if(!isdigit(inputStr[i])) goto beep; // invalid, end of string contains non-numerial arguments
     argument=atoi(inputStr+pos);    // that's the numerical argument after the command character
@@ -531,7 +620,7 @@ void parseCommand(char* inputStr) {
       doJcommand(address, argument);      
       break;  
     case 'D':                           // holos,D command is weird, does not need an argument, ignore if it has one
-      //doDcommand(address);
+      doDcommand(address);
       break;
     case 'P':                           // custom parameter (alphabet switching, palette cycling, settings saving etc)
       if(!hasArgument) goto beep;       // invalid, no argument after command
@@ -561,6 +650,210 @@ void parseCommand(char* inputStr) {
 // Special Effect Routines
 /////////////////////////////////////////////////////////////////////////////////////////////
 
+#if(WS2812HOLOS==1)
+void holoOn(byte address){
+  byte os = address*4;
+  //if(address == 2) os += MAGICLIGHTLEDS;
+  holoLEDs[os] = 0xffffff;
+  holoLEDs[os+1] = 0xffffff;
+  holoLEDs[os+2] = 0xffffff;
+  holoLEDs[os+3] = 0xffffff;
+}
+void holoOff(byte address){
+  byte os = address*4;
+  //if(address == 2) os += MAGICLIGHTLEDS;
+  holoLEDs[os] = 0x000000;
+  holoLEDs[os+1] = 0x000000;
+  holoLEDs[os+2] = 0x000000;
+  holoLEDs[os+3] = 0x000000;
+}
+void holoOffAll(){
+  for(byte i=0;i<3;i++){
+    holoOff(i);
+  }
+}
+void holoColor(byte address, int color){
+  byte os = address*4;
+  //if(address == 2) os += MAGICLIGHTLEDS;
+  holoLEDs[os] = color;
+  holoLEDs[os+1] = color;
+  holoLEDs[os+2] = color;
+  holoLEDs[os+3] = color;
+}
+void holoEffect( byte address ){
+  byte os = address*4;
+  unsigned long ct = millis();
+  if( ct - holoMillis[os] > (unsigned int)random(HOLOTMIN,HOLOTMAX)){
+    holoLEDs[os] = holoColors[random(HOLOCOLORS-1)];
+    holoMillis[os] = ct;
+  }
+  if( ct - holoMillis[os+1] > (unsigned int)random(HOLOTMIN,HOLOTMAX)){
+    holoLEDs[os+1] = holoColors[random(HOLOCOLORS-1)];
+    holoMillis[os+1] = ct;
+  }
+  if( ct - holoMillis[os+2] > (unsigned int)random(HOLOTMIN,HOLOTMAX)){
+    holoLEDs[os+2] = holoColors[random(HOLOCOLORS-1)];
+    holoMillis[os+2] = ct;
+  }
+  if( ct - holoMillis[os+3] > (unsigned int)random(HOLOTMIN,HOLOTMAX)){
+    holoLEDs[os+3] = holoColors[random(HOLOCOLORS-1)];
+    holoMillis[os+3] = ct;
+  }
+}
+
+void holoFailure( byte address){
+  byte os = address*4;
+  unsigned long ct = millis();
+  if( ct - holoMillis[os] > (unsigned int)random(HOLOTMIN,HOLOTMAX)){
+    holoOffAll();
+    holoLEDs[os] = map(holoColors[random(HOLOCOLORS-1)], 0,255,MIN_BRIGHTNESS, holoBright);
+    holoMillis[os] = ct;
+  } else
+  if( ct - holoMillis[os+1] > (unsigned int)random(HOLOTMIN,HOLOTMAX)){
+    holoOffAll();
+    holoLEDs[os+1] = map(holoColors[random(HOLOCOLORS-1)], 0,255,MIN_BRIGHTNESS, holoBright);
+    holoMillis[os+1] = ct;
+  }else 
+  if( ct - holoMillis[os+2] > (unsigned int)random(HOLOTMIN,HOLOTMAX)){
+    holoOffAll();
+    holoLEDs[os+2] = map(holoColors[random(HOLOCOLORS-1)], 0,255,MIN_BRIGHTNESS, holoBright);
+    holoMillis[os+2] = ct;
+  }else 
+  if( ct - holoMillis[os+3] > (unsigned int)random(HOLOTMIN,HOLOTMAX)){
+    holoOffAll();
+    holoLEDs[os+3] = map(holoColors[random(HOLOCOLORS-1)], 0,255,MIN_BRIGHTNESS, holoBright);
+    holoMillis[os+3] = ct;
+  }
+}
+#endif
+
+#if(WS2812MAGIC==1)
+void magicLightColor( int color){
+  for( byte i = 0; i < MAGICLIGHTLEDS; i++){
+    magicLEDs[i] = color;
+  }
+}
+#endif
+
+#if (ADAFRUITSERVO==1)
+void panelSequential() {
+
+  for ( int i = 0; i < DOMEPANELS; i++) {
+    openPie(i);
+    delay(200);
+    closePie(i);
+  }
+  delay(500);
+  PanelAllOff();
+  delay(2500);
+}
+
+void PanelAllClose() {
+  for ( int i = 0; i < DOMEPANELS; i++) {
+    closePie(i);
+  }
+  delay(500);
+  PanelAllOff();
+}
+
+void PanelAllOpen() {
+  for ( int i = 0; i < DOMEPANELS; i++) {
+    openPie(i);
+  }
+  delay(500);
+  PanelAllOff();
+//  delay(500);
+//  for ( int i = 0; i < DOMEPANELS; i++) {
+//    closePie(i);
+//  }
+//  delay(500);
+}
+void PanelAllOff() {
+  for ( int i = 0; i < DOMEPANELS; i++) {
+    pwm.setPin(i, 0, 0);
+  }
+}
+
+
+void openPie( int num ) {
+  if (num == 4) {
+    pwm.setPWM(num, 0, SERVOMIN);
+  } else {
+    pwm.setPWM(num, 0, SERVOMAX);
+  }
+
+  //  delay(1000);
+  //  pwm.setPin(num, 0, 0);
+
+}
+void closePie( int num ) {
+  if (num == 4) {
+    pwm.setPWM(num, 0, SERVOMAX);
+  } else {
+    pwm.setPWM(num, 0, SERVOMIN);
+  }
+
+  //  delay(1000);
+  //  pwm.setPin(num, 0, 0);
+
+}
+#endif
+
+#if (TEECESPSI==1)
+void setPSIstate(bool frontRear, byte PSIstate) {
+  //set PSI (0 or 1) to a state between 0 (full red) and 6 (full blue)
+  // states 7-11 are moving backwards
+  if (PSIstate > 6) PSIstate = 12 - PSIstate;
+  for (byte col = 0; col < 6; col++) {
+    if (col < PSIstate) {
+      if (col % 2) lcChain.setColumn(frontRear, col, B10101010);
+      else lcChain.setColumn(frontRear, col,      B01010101);
+    }
+    else {
+      if (col % 2) lcChain.setColumn(frontRear, col, B01010101);
+      else lcChain.setColumn(frontRear, col,      B10101010);
+    }
+  }
+}
+
+void PSIOn(bool frontRear, bool color){
+  for (byte col = 0; col < 6; col++) {
+      if (color) {
+        if (col % 2) lcChain.setColumn(frontRear, col, B10101010);
+        else lcChain.setColumn(frontRear, col,      B01010101);
+      } else {
+        if (col % 2) lcChain.setColumn(frontRear, col,  B01010101);
+        else lcChain.setColumn(frontRear, col,      B10101010);
+      }
+  }
+}
+
+byte PSIstates[2] = { 0, 0 };
+unsigned long PSItimes[2] = { millis(), millis() };
+unsigned int PSIpauses[2] = { 0, 0 };
+
+unsigned long PSITime = millis();
+bool curPSI = 0;
+void PSIFail(){
+  if( millis() - PSITime > (unsigned int)random(100,400)){
+    PSITime = millis();
+    if(curPSI){
+      lcChain.setIntensity(0,random(15));
+      setPSIstate(0,random(11)%2);
+      if(random(10)%2){
+        lcChain.clearDisplay(1);
+      }
+    } else {
+      lcChain.setIntensity(1,random(15));
+      setPSIstate(1,random(11));
+      if(random(10)%2){
+        lcChain.clearDisplay(0);
+      }
+    }
+    curPSI = random(10)%2;
+  }
+}
+#endif
 
 ////////////////////////////
 // Reset Utilities
@@ -632,21 +925,31 @@ void doTcommand(int address, int argument) {
   switch(argument) {
     case 0:    // test mode
       exitEffects();
-      if(address==0) {displayState[0]=displayState[1]=displayState[2]=psiState[0]=psiState[1]=TEST; resetAllText();}
+      if(address==0) {displayState[0]=displayState[1]=displayState[2]=psiState[0]=psiState[1]=holoState[0]=holoState[1]=holoState[2]=TEST; resetAllText();}
       /*if(address==1) {displayState[0]=TEST; resetText(0);}
       if(address==2) {displayState[1]=TEST; resetText(1);}
       if(address==3) {displayState[2]=TEST; resetText(2);}
       if(address==4) {psiState[0]=TEST;}
       if(address==5) {psiState[1]=TEST;}*/
+      #if(WS2812HOLOS==1)
+      if(address==6) {holoOn(0); holoState[0]=TEST;}
+      if(address==7) {holoOn(1); holoState[1]=TEST;}
+      if(address==8) {holoOn(2); holoState[2]=TEST;}
+      #endif
       break;
     case 1:    // normal random mode, cancel effects too
       exitEffects();
-      if(address==0) {displayState[0]=displayState[1]=displayState[2]=psiState[0]=psiState[1]=RANDOM; resetAllText();}
+      if(address==0) {displayState[0]=displayState[1]=displayState[2]=psiState[0]=psiState[1]=holoState[0]=holoState[1]=holoState[2]=RANDOM; resetAllText();}
       /*if(address==1) {displayState[0]=RANDOM; resetText(0);}
       if(address==2) {displayState[1]=RANDOM; resetText(1);}
       if(address==3) {displayState[2]=RANDOM; resetText(2);}
       if(address==4) {psiState[0]=RANDOM;}
       if(address==5) {psiState[1]=RANDOM;}*/
+      #if(WS2812HOLOS==1)
+      if(address==6) {holoOn(0); holoState[0]=RANDOM;}
+      if(address==7) {holoOn(1); holoState[1]=RANDOM;}
+      if(address==8) {holoOn(2); holoState[2]=RANDOM;}
+      #endif
       break;
     case 2: case 3: case 5:    // alarm
       exitEffects();
@@ -678,7 +981,7 @@ void doTcommand(int address, int argument) {
       break; 
     case 20:    // extra CuriousMarc command, to turn displays off.
       exitEffects();
-      if(address==0) {displayState[0]=displayState[1]=displayState[2]=psiState[0]=psiState[1]=OFF; resetAllText();}
+      if(address==0) {displayState[0]=displayState[1]=displayState[2]=psiState[0]=psiState[1]=holoState[0]=holoState[1]=holoState[2]=OFF; resetAllText();}
       if(address==1) {displayState[0]=OFF; resetText(0);}
       if(address==2) {displayState[1]=OFF; resetText(1);}
       if(address==3) {displayState[2]=OFF; resetText(2);}
@@ -709,7 +1012,17 @@ void doTcommand(int address, int argument) {
 void doDcommand(int address) {
   JEDI_SERIAL.print(F("\nCmd: D Addr: "));
   JEDI_SERIAL.print(address); 
-  // for turning off holos, not implemented
+  #if(WS2812HOLOS==1)
+  if(address == 0){
+    for(byte i = 0; i < 3; i++){
+      holoOff(i);
+      holoState[i] = OFF; 
+    }
+  }else{
+    holoOff(address-6);
+    holoState[address-6] = OFF;
+  }
+  #endif
 }
 
 // logic fade setting
@@ -869,10 +1182,6 @@ void doScommand(int address, int argument) {
 // =======================================================================================
 
 
-
-
-
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////    
@@ -1021,11 +1330,66 @@ void loop() {
           calculateAllColors(settings[0].frontPalNum,0,settings[0].frontBri);
           calculateAllColors(settings[0].rearPalNum,1,settings[0].rearBri);
           statusDelay=1500;
+          #if (TEECESPSI==1)
+          lcChain.setIntensity(0,15);
+          lcChain.setIntensity(1,15);
+          #endif
+          #if(WS2812MAGIC==1)
+          magicLightColor(0);
+          #endif
+          #if(WS2812HOLOS==1)
+          holoBright = 255;
+          #endif
         }
+        
+        if(previousEffect == FAILURE) {
+          #if(ADAFRUITSERVO==1)
+          PanelAllClose();
+          PanelAllOff();
+          #endif
+        }
+        
         //update all them thar LEDs for standard logic patterns...
         for ( byte i = 0; i < 80; i++) updateLED(pgm_read_byte(&frontLEDmap[i]),settings[0].frontHue,0); 
         for ( byte i = 0; i < 96; i++) updateLED(pgm_read_byte(&rearLEDmap[i]),settings[0].rearHue,1);
-        previousEffect=NORM;
+
+        #if(WS2812HOLOS==1)
+        for(byte i = 0; i < 3; i++){
+          switch(holoState[i]){
+            case TEST: holoOn(i); break;
+            case RANDOM: holoEffect(i); break;
+            case OFF: holoOff(i);break;
+          }
+        }
+        #endif
+        #if (TEECESPSI==1)
+        for (byte PSInum = 0; PSInum < 2; PSInum++) {
+          if (millis() - PSItimes[PSInum] >= PSIpauses[PSInum]) {
+            //time's up, do something...
+            PSIstates[PSInum]++;
+            if (PSIstates[PSInum] == 12) PSIstates[PSInum] = 0;
+            if (PSIstates[PSInum] != 0 && PSIstates[PSInum] != 6) {
+              //we're swiping...
+              PSIpauses[PSInum] = pgm_read_byte(&PSIdelay[PSInum]);
+              DEBUG_SERIAL.println("PSI Swipe");
+            }
+            else {
+              //we're pausing
+              DEBUG_SERIAL.println("PSI Pause");
+              PSIpauses[PSInum] = random(PSIpause[PSInum]);
+              //decide if we're going to get 'stuck'
+              if (random(10) <= PSIstuck) {
+                if (PSIstates[PSInum] == 0) PSIstates[PSInum] = random(1, 3);
+                else PSIstates[PSInum] = random(3, 5);
+              }
+            }
+            setPSIstate(PSInum, PSIstates[PSInum]);
+            PSItimes[PSInum] = millis();
+          }
+        }
+      #endif
+      
+      previousEffect=NORM;
   }
   else if (displayEffect==ALARM) {
         if (previousEffect!=ALARM) {
@@ -1038,15 +1402,39 @@ void loop() {
         if (flipflop==0) {
           settings[0].rearHue=127;
           settings[0].frontHue=127;
+          #if(WS2812MAGIC==1)
+          magicLightColor(0x000000);
+          #endif
         }
         else {
           settings[0].rearHue=0;
           settings[0].frontHue=0;
+          #if(WS2812MAGIC==1)
+          magicLightColor(0xff0000);
+          #endif
         }
         //maybe link brightness to the microphone?
         microphoneRead();
         for ( byte i = 0; i < 80; i++) updateLED(pgm_read_byte(&frontLEDmap[i]),settings[0].frontHue,0,peakVal); 
         for ( byte i = 0; i < 96; i++) updateLED(pgm_read_byte(&rearLEDmap[i]),settings[0].rearHue,1,peakVal);
+        #if(WS2812HOLOS==1)
+        for(byte i = 0; i < 3; i++){
+          if(flipflop==0){
+            holoColor(i, 0xff0000);
+          } else {
+            holoColor(i, 0x110000);
+          }
+        }
+        #endif
+        #if (TEECESPSI==1)
+        if(flipflop==0){
+            PSIOn(0, 0);
+            PSIOn(1, 0);
+        } else {
+            PSIOn(0,1);
+            PSIOn(1,1);
+        }
+        #endif
         
         if (currentMillis-effectStartMillis>=ALARMduration) displayEffect=NORM; //go back to normal operation if its time
         previousEffect=ALARM;
@@ -1143,12 +1531,36 @@ void loop() {
           //this portion lasts 1000 millis, so we'll scale brightness of both logics to a value related to this period
           settings[0].frontBri= map( (effectMillis-5500), 1000, 0 , 0, 255 );
           settings[0].rearBri= map( (effectMillis-5500), 1000, 0 , 0 , 255 );
+          #if(WS2812HOLOS==1)
+          holoBright =  map( (effectMillis-5500), 1000, 0 , 0 , 255 );
+          #endif
         }
         else if (effectMillis>=FAILUREduration) displayEffect=NORM; //go back to normal operation if its time    
-        previousEffect=FAILURE;
+        
         for ( byte i = 0; i < 80; i++) updateLED(pgm_read_byte(&frontLEDmap[i]),settings[0].frontHue,0,settings[0].frontBri); 
         for ( byte i = 0; i < 96; i++) updateLED(pgm_read_byte(&rearLEDmap[i]),settings[0].rearHue,1,settings[0].rearBri);
+        #if(WS2812HOLOS==1)
+        for(byte i = 0; i < 3; i++){
+            holoFailure(i);
+        }
+        #endif
+        #if (TEECESPSI==1)
+        PSIFail();
+        #endif
+
+        if(previousEffect != FAILURE) {
+        #if(ADAFRUITSERVO==1)
+          PanelAllOpen();
+          PanelAllOff();
+        #endif
+
+        #if(WS2812MAGIC==1)
+          magicLightColor(0xff0000);
+        #endif
+        }
+        previousEffect=FAILURE;
   }
+
   
   FastLED.show();
   
