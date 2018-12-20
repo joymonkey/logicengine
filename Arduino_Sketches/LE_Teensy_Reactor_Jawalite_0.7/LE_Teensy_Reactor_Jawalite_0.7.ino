@@ -377,7 +377,7 @@ void microphoneRead(unsigned int micPeriod=100) {
     peakToPeak = map((signalMax-signalMin), 0, 1024, 0, 255);
     //reset timer and signal measures...
     micStartMillis=currentMillis;
-    signalMax = 0; signalMax = 1024;
+    signalMax = 0; signalMin = 1024;
   }  
 }
 
