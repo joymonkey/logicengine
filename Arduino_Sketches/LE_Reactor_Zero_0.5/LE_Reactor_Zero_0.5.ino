@@ -14,7 +14,7 @@
 #define TEECESPSI 1  //enable support for two Teeces PSI's (oh, the humanity!). 0=disabled, 1=enabled
 
 #define ENABLE_JEDI_SERIAL 1
-#define BAUDRATE 19200
+#define BAUDRATE 2400 //2400 baud is standard for JEDI & Marcduino
 
 //default "factory" settings...
 #define DFLT_FRONT_FADE 3
