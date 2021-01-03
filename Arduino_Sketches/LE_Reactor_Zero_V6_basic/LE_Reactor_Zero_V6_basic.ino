@@ -199,10 +199,10 @@ void setup() {
   #endif 
   JEDI_SERIAL.begin(BAUDRATE);
 
-  #if defined(__SAMD21G18A__)
+  /*#if defined(__SAMD21G18A__)
     rtc.begin();
     rtc.setTime(0, 0, 0);
-  #endif
+  #endif*/
 
   mySettings = my_flash_store.read();
   if (mySettings.writes == false || mySettings.rearScrollSpeed == false) {
