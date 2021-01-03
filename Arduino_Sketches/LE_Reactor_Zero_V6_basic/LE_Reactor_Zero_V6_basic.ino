@@ -10,6 +10,7 @@
  *  - Adafruit_NeoMatrix
  *  - LEDControl
  *  Also Required For Reactor Zero board:
+ *  - RTCZero
  *  - FlashStorage
  * 
  * Recent Changes:
