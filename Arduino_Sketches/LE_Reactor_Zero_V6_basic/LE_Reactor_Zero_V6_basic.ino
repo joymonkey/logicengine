@@ -103,10 +103,10 @@ byte onOff[4]={0,1,1,1}; //turns on/off each logic display
 //////////////////////////////////
 //without RTCZero, millis() counts will be all off on the Reactor Zero
 //this shouldn't be necesaary if using a Teensy, AVR or ESP32
-/*#if defined(__SAMD21G18A__)
+#if defined(__SAMD21G18A__)
   #include <RTCZero.h>
   RTCZero rtc;
-#endif*/
+#endif
 
 
 ////////////////////////////////////////
@@ -199,10 +199,10 @@ void setup() {
   #endif 
   JEDI_SERIAL.begin(BAUDRATE);
 
-  /*#if defined(__SAMD21G18A__)
+  #if defined(__SAMD21G18A__)
     rtc.begin();
     rtc.setTime(0, 0, 0);
-  #endif*/
+  #endif
 
   mySettings = my_flash_store.read();
   if (mySettings.writes == false || mySettings.rearScrollSpeed == false) {
